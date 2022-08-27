@@ -15,7 +15,7 @@ Jagoancoin is a CPU mineable cryptocurrency and open source software developed u
 ------ | ------
 **Coin name:** | Jagoancoin (JGC)
 **Initial block reward:** | 2000 JGC
-**Average block time:** | 90 Second
+**Average block time:** | 120 Second
 **Smartnode Payments Start Block**: | 8400
 **Algorithm:** | GhostRider (ASIC and FPGA resistance)
 **Premine:** | none
