@@ -27,7 +27,7 @@ WalletFrame {
     
     QMenuBar::item:selected {
     background-color: #0f130d;
-    color: #4F7942; 
+    color: #0044ff; 
     }
     
     QMenu {
@@ -40,18 +40,18 @@ WalletFrame {
     
     QMenu::item:selected {
     background-color: #666;
-    color: #4F7942;
+    color: #0044ff;
     }
     
     QToolBar {
-    background-color: #4F7942;
+    background-color: #0044ff;
     border: 0;
     padding:0;
     margin:0;
     }
     
     QToolBar > QToolButton {
-    background-color: #4F7942;
+    background-color: #0044ff;
     border: 0;
     font-size: 14px;
     min-width: 70px;
@@ -93,7 +93,7 @@ WalletFrame {
     }
     
     .QValidatedLineEdit, .QLineEdit { /* Text Entry Fields */
-    background-color: #4F7942;
+    background-color: #0044ff;
     font-size:11px;
     min-height:31px;
     outline:0;
@@ -127,7 +127,7 @@ WalletFrame {
     /*******************************************************/
     
     QPushButton { /* Global Button Style */
-    background-color: #4F7942;
+    background-color: #0044ff;
     border: 0;
     border-radius:8px;
     color:#ffffff;
@@ -141,7 +141,7 @@ WalletFrame {
     }
     
     QPushButton:hover {
-    background-color: #4F7942; /* aka Dark Blue */
+    background-color: #0044ff; /* aka Dark Blue */
     }
     
     QPushButton:focus {
@@ -306,7 +306,7 @@ WalletFrame {
     
     QHeaderView::section { /* Table Header Sections */
     qproperty-alignment:center;
-    background-color: #4F7942;
+    background-color: #0044ff;
     color: #ccc;
     min-height:25px;
     font-weight:bold;
@@ -468,7 +468,7 @@ WalletFrame {
     }
     
     QDialog#SignVerifyMessageDialog QPlainTextEdit { /* Message Signing Text */
-    border: 1px solid #4F7942;
+    border: 1px solid #0044ff;
     background-color: #091306;
     color: #ccc;
     }
@@ -774,7 +774,7 @@ WalletFrame {
     
     QWidget .QFrame#frame .QLabel#label_5 { /* Wallet Label */
     min-width:180px;
-    color:#4F7942;
+    color:#0044ff;
     margin-top:0;
     margin-right:5px;
     padding-right:5px;
@@ -907,7 +907,7 @@ WalletFrame {
     QWidget .QFrame#framePrivateSend .QLabel#labelPrivateSendHeader { /* PrivateSend Header */
     qproperty-alignment: 'AlignVCenter | AlignLeft';
     min-width:180px;
-    color:#4F7942;
+    color:#0044ff;
     margin-top:0;
     margin-right:5px;
     padding-right:5px;
@@ -964,7 +964,7 @@ WalletFrame {
     }
     
     QWidget .QFrame#framePrivateSend #privateSendFormLayoutWidget .QProgressBar#privateSendProgress::chunk {
-    background-color: #4F7942;
+    background-color: #0044ff;
     width:1px;
     }
     
@@ -1053,7 +1053,7 @@ WalletFrame {
     
     QWidget .QFrame#frame_2 .QLabel#label_4 { /* Recent Transactions Label */
     min-width:180px;
-    color: #4F7942;
+    color: #0044ff;
     margin-left:67px;
     margin-top:0;
     margin-right:5px;
