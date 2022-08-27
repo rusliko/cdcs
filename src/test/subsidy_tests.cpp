@@ -1,12 +1,12 @@
-// Copyright (c) 2014-2018 The Dash Core developers
-// Copyright (c) 2020 The Raptoreum developers
+// Copyright (c) 2014-2020 The Dash Core developers
+// Copyright (c) 2020-2022 The Jagoancoin developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "chainparams.h"
-#include "validation.h"
+#include <chainparams.h>
+#include <validation.h>
 
-#include "test/test_jagoancoin.h"
+#include <test/test_jagoancoin.h>
 
 #include <boost/test/unit_test.hpp>
 

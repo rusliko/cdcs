@@ -1,9 +1,9 @@
 Release Process
 ====================
 
-* Update translations, see [translation_process.md](https://github.com/jagoanpilot/jagoancoin/blob/master/doc/translation_process.md#synchronising-translations).
+* Update translations, see [translation_process.md](https://github.com/jagoancoin/jagoancoin/blob/master/doc/translation_process.md#synchronising-translations).
 
-* Update manpages, see [gen-manpages.sh](https://github.com/jagoanpilot/jagoancoin/blob/master/contrib/devtools/README.md#gen-manpagessh).
+* Update manpages, see [gen-manpages.sh](https://github.com/jagoancoin/jagoancoin/blob/master/contrib/devtools/README.md#gen-manpagessh).
 
 Before every minor and major release:
 
@@ -11,7 +11,7 @@ Before every minor and major release:
 * Update version in `configure.ac` (don't forget to set `CLIENT_VERSION_IS_RELEASE` to `true`)
 * Write release notes (see below)
 * Update `src/chainparams.cpp` nMinimumChainWork with information from the getblockchaininfo rpc.
-* Update `src/chainparams.cpp` defaultAssumeValid  with information from the getblockhash rpc.
+* Update `src/chainparams.cpp` defaultAssumeValid with information from the getblockhash rpc.
   - The selected value must not be orphaned so it may be useful to set the value two blocks back from the tip.
   - Testnet should be set some tens of thousands back from the tip due to reorgs there.
   - This update should be reviewed with a reindex-chainstate with assumevalid=0 to catch any defect
@@ -21,7 +21,8 @@ Before every major release:
 
 * Update hardcoded [seeds](/contrib/seeds/README.md). TODO: Give example PR for Jagoancoin
 * Update [`BLOCK_CHAIN_SIZE`](/src/qt/intro.cpp) to the current size plus some overhead.
-* Update `src/chainparams.cpp` chainTxData with statistics about the transaction count and rate.
+* Update `src/chainparams.cpp` chainTxData with statistics about the transaction count and rate. Use the output of the RPC `getchaintxstats`, see
+  [this pull request](https://github.com/bitcoin/bitcoin/pull/12270) for an example. Reviewers can verify the results by running `getchaintxstats <window_block_count> <window_last_block_hash>` with the `window_block_count` and `window_last_block_hash` from your output.
 * Update version of `contrib/gitian-descriptors/*.yml`: usually one'd want to do this on master after branching off the release - but be sure to at least do it before a new major release
 
 ### First time / New builders
@@ -31,10 +32,10 @@ If you're using the automated script (found in [contrib/gitian-build.py](/contri
 Check out the source code in the following directory hierarchy.
 
 	cd /path/to/your/toplevel/build
-	git clone https://github.com/jagoanpilot/gitian.sigs.git
-	git clone https://github.com/jagoanpilot/jagoancoin-detached-sigs.git
+	git clone https://github.com/jagoancoin/gitian.sigs.git
+	git clone https://github.com/jagoancoin/jagoancoin-detached-sigs.git
 	git clone https://github.com/devrandom/gitian-builder.git
-	git clone https://github.com/jagoanpilot/jagoancoin.git
+	git clone https://github.com/jagoancoin/jagoancoin.git
 
 ### Jagoancoin Core maintainers/release engineers, suggestion for writing release notes
 
@@ -44,7 +45,7 @@ Write release notes. git shortlog helps a lot, for example:
 
 Generate list of authors:
 
-    git log --format='%aN' "$*" | sort -ui | sed -e 's/^/- /'
+    git log --format='- %aN' v(current version, e.g. 0.16.0)..v(new version, e.g. 0.16.1) | sort -fiu
 
 Tag version (or release candidate) in git
 
@@ -88,7 +89,9 @@ Create the OS X SDK tarball, see the [OS X readme](README_osx.md) for details, a
 
 ### Optional: Seed the Gitian sources cache and offline git repositories
 
-By default, Gitian will fetch source files as needed. To cache them ahead of time:
+NOTE: Gitian is sometimes unable to download files. If you have errors, try the step below.
+
+By default, Gitian will fetch source files as needed. To cache them ahead of time, make sure you have checked out the tag you want to build in jagoancoin, then:
 
     pushd ./gitian-builder
     make -C ../jagoancoin/depends download SOURCES_PATH=`pwd`/cache/common
@@ -108,16 +111,16 @@ The gbuild invocations below <b>DO NOT DO THIS</b> by default.
 
     pushd ./gitian-builder
     ./bin/gbuild --num-make 2 --memory 3000 --commit jagoancoin=v${VERSION} ../jagoancoin/contrib/gitian-descriptors/gitian-linux.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../jagoancoin/contrib/gitian-descriptors/gitian-linux.yml
+    ./bin/gsign --signer "$SIGNER" --release ${VERSION}-linux --destination ../gitian.sigs/ ../jagoancoin/contrib/gitian-descriptors/gitian-linux.yml
     mv build/out/jagoancoin-*.tar.gz build/out/src/jagoancoin-*.tar.gz ../
 
     ./bin/gbuild --num-make 2 --memory 3000 --commit jagoancoin=v${VERSION} ../jagoancoin/contrib/gitian-descriptors/gitian-win.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-win-unsigned --destination ../gitian.sigs/ ../jagoancoin/contrib/gitian-descriptors/gitian-win.yml
+    ./bin/gsign --signer "$SIGNER" --release ${VERSION}-win-unsigned --destination ../gitian.sigs/ ../jagoancoin/contrib/gitian-descriptors/gitian-win.yml
     mv build/out/jagoancoin-*-win-unsigned.tar.gz inputs/jagoancoin-win-unsigned.tar.gz
     mv build/out/jagoancoin-*.zip build/out/jagoancoin-*.exe ../
 
     ./bin/gbuild --num-make 2 --memory 3000 --commit jagoancoin=v${VERSION} ../jagoancoin/contrib/gitian-descriptors/gitian-osx.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-osx-unsigned --destination ../gitian.sigs/ ../jagoancoin/contrib/gitian-descriptors/gitian-osx.yml
+    ./bin/gsign --signer "$SIGNER" --release ${VERSION}-osx-unsigned --destination ../gitian.sigs/ ../jagoancoin/contrib/gitian-descriptors/gitian-osx.yml
     mv build/out/jagoancoin-*-osx-unsigned.tar.gz inputs/jagoancoin-osx-unsigned.tar.gz
     mv build/out/jagoancoin-*.tar.gz build/out/jagoancoin-*.dmg ../
     popd
@@ -150,9 +153,9 @@ Verify the signatures
 Commit your signature to gitian.sigs:
 
     pushd gitian.sigs
-    git add ${VERSION}-linux/${SIGNER}
-    git add ${VERSION}-win-unsigned/${SIGNER}
-    git add ${VERSION}-osx-unsigned/${SIGNER}
+    git add ${VERSION}-linux/"${SIGNER}"
+    git add ${VERSION}-win-unsigned/"${SIGNER}"
+    git add ${VERSION}-osx-unsigned/"${SIGNER}"
     git commit -a
     git push  # Assuming you can push to the gitian.sigs tree
     popd
@@ -163,22 +166,22 @@ Codesigner only: Create Windows/OS X detached signatures:
 
 Codesigner only: Sign the osx binary:
 
-    transfer jagoancoin-osx-unsigned.tar.gz to osx for signing
-    tar xf jagoancoin-osx-unsigned.tar.gz
+    transfer jagoancoincore-osx-unsigned.tar.gz to osx for signing
+    tar xf jagoancoincore-osx-unsigned.tar.gz
     ./detached-sig-create.sh -s "Key ID" -o runtime
     Enter the keychain password and authorize the signature
     Move signature-osx.tar.gz back to the gitian host
 
 Codesigner only: Sign the windows binaries:
 
-    tar xf jagoancoin-win-unsigned.tar.gz
+    tar xf jagoancoincore-win-unsigned.tar.gz
     ./detached-sig-create.sh -key /path/to/codesign.key
     Enter the passphrase for the key when prompted
     signature-win.tar.gz will be created
 
 Codesigner only: Commit the detached codesign payloads:
 
-    cd ~/jagoancoin-detached-sigs
+    cd ~/jagoancoincore-detached-sigs
     checkout the appropriate branch for this release series
     rm -rf *
     tar xf signature-osx.tar.gz
@@ -191,13 +194,13 @@ Codesigner only: Commit the detached codesign payloads:
 Non-codesigners: wait for Windows/OS X detached signatures:
 
 - Once the Windows/OS X builds each have 3 matching signatures, they will be signed with their respective release keys.
-- Detached signatures will then be committed to the [jagoancoin-detached-sigs](https://github.com/jagoanpilot/jagoancoin-detached-sigs) repository, which can be combined with the unsigned apps to create signed binaries.
+- Detached signatures will then be committed to the [jagoancoin-detached-sigs](https://github.com/jagoancoin/jagoancoin-detached-sigs) repository, which can be combined with the unsigned apps to create signed binaries.
 
 Create (and optionally verify) the signed OS X binary:
 
     pushd ./gitian-builder
     ./bin/gbuild -i --commit signature=v${VERSION} ../jagoancoin/contrib/gitian-descriptors/gitian-osx-signer.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-osx-signed --destination ../gitian.sigs/ ../jagoancoin/contrib/gitian-descriptors/gitian-osx-signer.yml
+    ./bin/gsign --signer "$SIGNER" --release ${VERSION}-osx-signed --destination ../gitian.sigs/ ../jagoancoin/contrib/gitian-descriptors/gitian-osx-signer.yml
     ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../jagoancoin/contrib/gitian-descriptors/gitian-osx-signer.yml
     mv build/out/jagoancoin-osx-signed.dmg ../jagoancoin-${VERSION}-osx.dmg
     popd
@@ -206,7 +209,7 @@ Create (and optionally verify) the signed Windows binaries:
 
     pushd ./gitian-builder
     ./bin/gbuild -i --commit signature=v${VERSION} ../jagoancoin/contrib/gitian-descriptors/gitian-win-signer.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-win-signed --destination ../gitian.sigs/ ../jagoancoin/contrib/gitian-descriptors/gitian-win-signer.yml
+    ./bin/gsign --signer "$SIGNER" --release ${VERSION}-win-signed --destination ../gitian.sigs/ ../jagoancoin/contrib/gitian-descriptors/gitian-win-signer.yml
     ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-signed ../jagoancoin/contrib/gitian-descriptors/gitian-win-signer.yml
     mv build/out/jagoancoin-*win64-setup.exe ../jagoancoin-${VERSION}-win64-setup.exe
     mv build/out/jagoancoin-*win32-setup.exe ../jagoancoin-${VERSION}-win32-setup.exe
@@ -215,8 +218,8 @@ Create (and optionally verify) the signed Windows binaries:
 Commit your signature for the signed OS X/Windows binaries:
 
     pushd gitian.sigs
-    git add ${VERSION}-osx-signed/${SIGNER}
-    git add ${VERSION}-win-signed/${SIGNER}
+    git add ${VERSION}-osx-signed/"${SIGNER}"
+    git add ${VERSION}-win-signed/"${SIGNER}"
     git commit -a
     git push  # Assuming you can push to the gitian.sigs tree
     popd
@@ -243,9 +246,9 @@ jagoancoin-${VERSION}-win32.zip
 jagoancoin-${VERSION}-win64-setup.exe
 jagoancoin-${VERSION}-win64.zip
 ```
-The `*-debug*` files generated by the gitian build contain debug symbols
+The `*-debug*` files generated by the Gitian build contain debug symbols
 for troubleshooting by developers. It is assumed that anyone that is interested
-in debugging can run gitian to generate the files for themselves. To avoid
+in debugging can run Gitian to generate the files for themselves. To avoid
 end-user confusion about which file to pick, as well as save storage
 space *do not upload these to the jagoancoin.org server*.
 
@@ -271,6 +274,6 @@ Note: check that SHA256SUMS itself doesn't end up in SHA256SUMS, which is a spur
 
   - Archive release notes for the new version to `doc/release-notes/` (branch `master` and branch of the release)
 
-  - Create a [new GitHub release](https://github.com/jagoanpilot/jagoancoin/releases/new) with a link to the archived release notes.
+  - Create a [new GitHub release](https://github.com/jagoancoin/jagoancoin/releases/new) with a link to the archived release notes.
 
   - Celebrate

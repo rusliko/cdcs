@@ -10,14 +10,14 @@ can be found in the contrib/init folder.
     contrib/init/jagoancoind.conf:       Upstart service configuration file
     contrib/init/jagoancoind.init:       CentOS compatible SysV style init script
 
-1. Service User
+Service User
 ---------------------------------
 
-All three Linux startup configurations assume the existence of a "jagoancoin" user
+All three Linux startup configurations assume the existence of a "jagoancoincore" user
 and group.  They must be created before attempting to use these scripts.
 The OS X configuration assumes jagoancoind will be set up for the current user.
 
-2. Configuration
+Configuration
 ---------------------------------
 
 At a bare minimum, jagoancoind requires that the rpcpassword setting be set
@@ -46,36 +46,36 @@ relative to the data directory. `wallet` *only* supports relative paths.
 For an example configuration file that describes the configuration settings,
 see `contrib/debian/examples/jagoancoin.conf`.
 
-3. Paths
+Paths
 ---------------------------------
 
-3a) Linux
+### Linux
 
 All three configurations assume several paths that might need to be adjusted.
 
 Binary:              `/usr/bin/jagoancoind`  
-Configuration file:  `/etc/jagoancoin/jagoancoin.conf`  
+Configuration file:  `/etc/jagoancoincore/jagoancoin.conf`  
 Data directory:      `/var/lib/jagoancoind`  
 PID file:            `/var/run/jagoancoind/jagoancoind.pid` (OpenRC and Upstart) or `/var/lib/jagoancoind/jagoancoind.pid` (systemd)  
 Lock file:           `/var/lock/subsys/jagoancoind` (CentOS)  
 
 The configuration file, PID directory (if applicable) and data directory
-should all be owned by the jagoancoin user and group.  It is advised for security
+should all be owned by the jagoancoincore user and group.  It is advised for security
 reasons to make the configuration file and data directory only readable by the
-jagoancoin user and group.  Access to jagoancoin-cli and other jagoancoind rpc clients
+jagoancoincore user and group.  Access to jagoancoin-cli and other jagoancoind rpc clients
 can then be controlled by group membership.
 
-3b) Mac OS X
+### Mac OS X
 
 Binary:              `/usr/local/bin/jagoancoind`  
-Configuration file:  `~/Library/Application Support/JagoanCoin/jagoancoin.conf`  
-Data directory:      `~/Library/Application Support/JagoanCoin`
-Lock file:           `~/Library/Application Support/JagoanCoin/.lock`
+Configuration file:  `~/Library/Application Support/JagoancoinCore/jagoancoin.conf`  
+Data directory:      `~/Library/Application Support/JagoancoinCore`
+Lock file:           `~/Library/Application Support/JagoancoinCore/.lock`
 
-4. Installing Service Configuration
+Installing Service Configuration
 -----------------------------------
 
-4a) systemd
+### systemd
 
 Installing this .service file consists of just copying it to
 /usr/lib/systemd/system directory, followed by the command
@@ -84,14 +84,14 @@ Installing this .service file consists of just copying it to
 To test, run `systemctl start jagoancoind` and to enable for system startup run
 `systemctl enable jagoancoind`
 
-4b) OpenRC
+### OpenRC
 
 Rename jagoancoind.openrc to jagoancoind and drop it in /etc/init.d.  Double
 check ownership and permissions and make it executable.  Test it with
 `/etc/init.d/jagoancoind start` and configure it to run on startup with
 `rc-update add jagoancoind`
 
-4c) Upstart (for Debian/Ubuntu based distributions)
+### Upstart (for Debian/Ubuntu based distributions)
 
 Drop jagoancoind.conf in /etc/init.  Test by running `service jagoancoind start`
 it will automatically start on reboot.
@@ -99,7 +99,7 @@ it will automatically start on reboot.
 NOTE: This script is incompatible with CentOS 5 and Amazon Linux 2014 as they
 use old versions of Upstart and do not supply the start-stop-daemon utility.
 
-4d) CentOS
+### CentOS
 
 Copy jagoancoind.init to /etc/init.d/jagoancoind. Test by running `service jagoancoind start`.
 
@@ -107,7 +107,7 @@ Using this script, you can adjust the path and flags to the jagoancoind program 
 setting the JAGOANCOIND and FLAGS environment variables in the file
 /etc/sysconfig/jagoancoind. You can also use the DAEMONOPTS environment variable here.
 
-4e) Mac OS X
+### Mac OS X
 
 Copy org.jagoancoin.jagoancoind.plist into ~/Library/LaunchAgents. Load the launch agent by
 running `launchctl load ~/Library/LaunchAgents/org.jagoancoin.jagoancoind.plist`.
@@ -116,9 +116,9 @@ This Launch Agent will cause jagoancoind to start whenever the user logs in.
 
 NOTE: This approach is intended for those wanting to run jagoancoind as the current user.
 You will need to modify org.jagoancoin.jagoancoind.plist if you intend to use it as a
-Launch Daemon with a dedicated jagoancoin user.
+Launch Daemon with a dedicated jagoancoincore user.
 
-5. Auto-respawn
+Auto-respawn
 -----------------------------------
 
 Auto respawning is currently only configured for Upstart and systemd.

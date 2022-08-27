@@ -23,13 +23,13 @@ def setup():
             exit(1)
     subprocess.check_call(['sudo', 'apt-get', 'install', '-qq'] + programs)
     if not os.path.isdir('gitian.sigs'):
-        subprocess.check_call(['git', 'clone', 'https://github.com/jagoanpilot/gitian.sigs.git'])
+        subprocess.check_call(['git', 'clone', 'https://github.com/jagoancoin/gitian.sigs.git'])
     if not os.path.isdir('jagoancoin-detached-sigs'):
-        subprocess.check_call(['git', 'clone', 'https://github.com/jagoanpilot/jagoancoin-detached-sigs.git'])
+        subprocess.check_call(['git', 'clone', 'https://github.com/jagoancoin/jagoancoin-detached-sigs.git'])
     if not os.path.isdir('gitian-builder'):
         subprocess.check_call(['git', 'clone', 'https://github.com/devrandom/gitian-builder.git'])
     if not os.path.isdir('jagoancoin'):
-        subprocess.check_call(['git', 'clone', 'https://github.com/jagoanpilot/jagoancoin.git'])
+        subprocess.check_call(['git', 'clone', 'https://github.com/jagoancoin/jagoancoin.git'])
     os.chdir('gitian-builder')
     make_image_prog = ['bin/make-base-vm', '--suite', 'bionic', '--arch', 'amd64']
     if args.docker:
@@ -46,7 +46,7 @@ def setup():
 def build():
     global args, workdir
 
-    os.makedirs('jagoancoin-binaries/' + args.version, exist_ok=True)
+    os.makedirs('jagoancoincore-binaries/' + args.version, exist_ok=True)
     print('\nBuilding Dependencies\n')
     os.chdir('gitian-builder')
     os.makedirs('inputs', exist_ok=True)
@@ -59,14 +59,14 @@ def build():
         print('\nCompiling ' + args.version + ' Linux')
         subprocess.check_call(['bin/gbuild', '-j', args.jobs, '-m', args.memory, '--commit', 'jagoancoin='+args.commit, '--url', 'jagoancoin='+args.url, '../jagoancoin/contrib/gitian-descriptors/gitian-linux.yml'])
         subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-linux', '--destination', '../gitian.sigs/', '../jagoancoin/contrib/gitian-descriptors/gitian-linux.yml'])
-        subprocess.check_call('mv build/out/jagoancoin-*.tar.gz build/out/src/jagoancoin-*.tar.gz ../jagoancoin-binaries/'+args.version, shell=True)
+        subprocess.check_call('mv build/out/jagoancoincore-*.tar.gz build/out/src/jagoancoincore-*.tar.gz ../jagoancoincore-binaries/'+args.version, shell=True)
 
     if args.windows:
         print('\nCompiling ' + args.version + ' Windows')
         subprocess.check_call(['bin/gbuild', '-j', args.jobs, '-m', args.memory, '--commit', 'jagoancoin='+args.commit, '--url', 'jagoancoin='+args.url, '../jagoancoin/contrib/gitian-descriptors/gitian-win.yml'])
         subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-win-unsigned', '--destination', '../gitian.sigs/', '../jagoancoin/contrib/gitian-descriptors/gitian-win.yml'])
-        subprocess.check_call('mv build/out/jagoancoin-*-win-unsigned.tar.gz inputs/jagoancoin-win-unsigned.tar.gz', shell=True)
-        subprocess.check_call('mv build/out/jagoancoin-*.zip build/out/jagoancoin-*.exe ../jagoancoin-binaries/'+args.version, shell=True)
+        subprocess.check_call('mv build/out/jagoancoincore-*-win-unsigned.tar.gz inputs/jagoancoincore-win-unsigned.tar.gz', shell=True)
+        subprocess.check_call('mv build/out/jagoancoincore-*.zip build/out/jagoancoincore-*.exe ../jagoancoincore-binaries/'+args.version, shell=True)
 
     if args.macos:
         print('\nCompiling ' + args.version + ' MacOS')
@@ -74,8 +74,8 @@ def build():
         subprocess.check_output(["echo 'bec9d089ebf2e2dd59b1a811a38ec78ebd5da18cbbcd6ab39d1e59f64ac5033f inputs/MacOSX10.11.sdk.tar.gz' | sha256sum -c"], shell=True)
         subprocess.check_call(['bin/gbuild', '-j', args.jobs, '-m', args.memory, '--commit', 'jagoancoin='+args.commit, '--url', 'jagoancoin='+args.url, '../jagoancoin/contrib/gitian-descriptors/gitian-osx.yml'])
         subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-osx-unsigned', '--destination', '../gitian.sigs/', '../jagoancoin/contrib/gitian-descriptors/gitian-osx.yml'])
-        subprocess.check_call('mv build/out/jagoancoin-*-osx-unsigned.tar.gz inputs/jagoancoin-osx-unsigned.tar.gz', shell=True)
-        subprocess.check_call('mv build/out/jagoancoin-*.tar.gz build/out/jagoancoin-*.dmg ../jagoancoin-binaries/'+args.version, shell=True)
+        subprocess.check_call('mv build/out/jagoancoincore-*-osx-unsigned.tar.gz inputs/jagoancoincore-osx-unsigned.tar.gz', shell=True)
+        subprocess.check_call('mv build/out/jagoancoincore-*.tar.gz build/out/jagoancoincore-*.dmg ../jagoancoincore-binaries/'+args.version, shell=True)
 
     os.chdir(workdir)
 
@@ -96,14 +96,14 @@ def sign():
         print('\nSigning ' + args.version + ' Windows')
         subprocess.check_call(['bin/gbuild', '-i', '--commit', 'signature='+args.commit, '../jagoancoin/contrib/gitian-descriptors/gitian-win-signer.yml'])
         subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-win-signed', '--destination', '../gitian.sigs/', '../jagoancoin/contrib/gitian-descriptors/gitian-win-signer.yml'])
-        subprocess.check_call('mv build/out/jagoancoin-*win64-setup.exe ../jagoancoin-binaries/'+args.version, shell=True)
-        subprocess.check_call('mv build/out/jagoancoin-*win32-setup.exe ../jagoancoin-binaries/'+args.version, shell=True)
+        subprocess.check_call('mv build/out/jagoancoincore-*win64-setup.exe ../jagoancoincore-binaries/'+args.version, shell=True)
+        subprocess.check_call('mv build/out/jagoancoincore-*win32-setup.exe ../jagoancoincore-binaries/'+args.version, shell=True)
 
     if args.macos:
         print('\nSigning ' + args.version + ' MacOS')
         subprocess.check_call(['bin/gbuild', '-i', '--commit', 'signature='+args.commit, '../jagoancoin/contrib/gitian-descriptors/gitian-osx-signer.yml'])
         subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-osx-signed', '--destination', '../gitian.sigs/', '../jagoancoin/contrib/gitian-descriptors/gitian-osx-signer.yml'])
-        subprocess.check_call('mv build/out/jagoancoin-osx-signed.dmg ../jagoancoin-binaries/'+args.version+'/jagoancoin-'+args.version+'-osx.dmg', shell=True)
+        subprocess.check_call('mv build/out/jagoancoincore-osx-signed.dmg ../jagoancoincore-binaries/'+args.version+'/jagoancoincore-'+args.version+'-osx.dmg', shell=True)
 
     os.chdir(workdir)
 
@@ -138,7 +138,7 @@ def main():
     parser = argparse.ArgumentParser(usage='%(prog)s [options] signer version')
     parser.add_argument('-c', '--commit', action='store_true', dest='commit', help='Indicate that the version argument is for a commit or branch')
     parser.add_argument('-p', '--pull', action='store_true', dest='pull', help='Indicate that the version argument is the number of a github repository pull request')
-    parser.add_argument('-u', '--url', dest='url', default='https://github.com/jagoanpilot/jagoancoin', help='Specify the URL of the repository. Default is %(default)s')
+    parser.add_argument('-u', '--url', dest='url', default='https://github.com/jagoancoin/jagoancoin', help='Specify the URL of the repository. Default is %(default)s')
     parser.add_argument('-v', '--verify', action='store_true', dest='verify', help='Verify the Gitian build')
     parser.add_argument('-b', '--build', action='store_true', dest='build', help='Do a Gitian build')
     parser.add_argument('-s', '--sign', action='store_true', dest='sign', help='Make signed binaries for Windows and MacOS')

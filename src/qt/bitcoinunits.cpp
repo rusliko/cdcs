@@ -1,12 +1,12 @@
 // Copyright (c) 2011-2015 The Bitcoin Core developers
-// Copyright (c) 2014-2019 The Dash Core developers
-// Copyright (c) 2020 The Raptoreum developers
+// Copyright (c) 2014-2020 The Dash Core developers
+// Copyright (c) 2020-2021 The Jagoancoin developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "bitcoinunits.h"
-#include "chainparams.h"
-#include "primitives/transaction.h"
+#include <qt/bitcoinunits.h>
+#include <chainparams.h>
+#include <primitives/transaction.h>
 
 #include <QSettings>
 #include <QStringList>
@@ -23,7 +23,7 @@ QList<BitcoinUnits::Unit> BitcoinUnits::availableUnits()
     unitlist.append(JGC);
     unitlist.append(mJGC);
     unitlist.append(uJGC);
-    unitlist.append(weeds);
+    unitlist.append(ruffs);
     return unitlist;
 }
 
@@ -34,7 +34,7 @@ bool BitcoinUnits::valid(int unit)
     case JGC:
     case mJGC:
     case uJGC:
-    case weeds:
+    case ruffs:
         return true;
     default:
         return false;
@@ -50,7 +50,7 @@ QString BitcoinUnits::name(int unit)
             case JGC: return QString("JGC");
             case mJGC: return QString("mJGC");
             case uJGC: return QString::fromUtf8("μJGC");
-            case weeds: return QString("weeds");
+            case ruffs: return QString("ruffs");
             default: return QString("???");
         }
     }
@@ -61,7 +61,7 @@ QString BitcoinUnits::name(int unit)
             case JGC: return QString("tJGC");
             case mJGC: return QString("mtJGC");
             case uJGC: return QString::fromUtf8("μtJGC");
-            case weeds: return QString("tduffs");
+            case ruffs: return QString("truffs");
             default: return QString("???");
         }
     }
@@ -76,7 +76,7 @@ QString BitcoinUnits::description(int unit)
             case JGC: return QString("Jagoancoin");
             case mJGC: return QString("Milli-Jagoancoin (1 / 1" THIN_SP_UTF8 "000)");
             case uJGC: return QString("Micro-Jagoancoin (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
-            case weeds: return QString("Ten Nano-Jagoancoin (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case ruffs: return QString("Ten Nano-Jagoancoin (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
             default: return QString("???");
         }
     }
@@ -87,7 +87,7 @@ QString BitcoinUnits::description(int unit)
             case JGC: return QString("TestJagoancoins");
             case mJGC: return QString("Milli-TestJagoancoin (1 / 1" THIN_SP_UTF8 "000)");
             case uJGC: return QString("Micro-TestJagoancoin (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
-            case weeds: return QString("Ten Nano-TestJagoancoin (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case ruffs: return QString("Ten Nano-TestJagoancoin (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
             default: return QString("???");
         }
     }
@@ -100,7 +100,7 @@ qint64 BitcoinUnits::factor(int unit)
     case JGC:  return 100000000;
     case mJGC: return 100000;
     case uJGC: return 100;
-    case weeds: return 1;
+    case ruffs: return 1;
     default:   return 100000000;
     }
 }
@@ -112,7 +112,7 @@ int BitcoinUnits::decimals(int unit)
     case JGC: return 8;
     case mJGC: return 5;
     case uJGC: return 2;
-    case weeds: return 0;
+    case ruffs: return 0;
     default: return 0;
     }
 }
@@ -247,7 +247,11 @@ int BitcoinUnits::rowCount(const QModelIndex &parent) const
 
 QVariant BitcoinUnits::data(const QModelIndex &index, int role) const
 {
-    int row = index.row();
+    return data(index.row(), role);
+}
+
+QVariant BitcoinUnits::data(const int &row, int role) const
+{
     if(row >= 0 && row < unitlist.size())
     {
         Unit unit = unitlist.at(row);

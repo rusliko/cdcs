@@ -1,6 +1,6 @@
 FROM debian:stretch
 LABEL maintainer="Jagoancoin Developers <dev@jagoancoin.org>"
-LABEL description="Dockerised JagoanCoin, built from Travis"
+LABEL description="Dockerised JagoancoinCore, built from Travis"
 
 RUN apt-get update && apt-get -y upgrade && apt-get clean && rm -fr /var/cache/apt/*
 

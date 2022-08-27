@@ -12,8 +12,8 @@ When a "Transaction Lock" occurs the hash of the related transaction is broadcas
 * `zmqpubhashtxlock`: publishes the transaction hash when locked via InstantSend
 
 This mechanism has been integrated into Bitcore-Node-Jagoancoin which allows for notification to be broadcast through Insight API in one of two ways:
-* WebSocket: [https://github.com/jagoanpilot/insight-api-jagoancoin#web-socket-api](https://github.com/jagoanpilot/insight-api-jagoancoin#web-socket-api)
-* API: [https://github.com/jagoanpilot/insight-api-jagoancoin#instantsend-transactions](https://github.com/jagoanpilot/insight-api-jagoancoin#instantsend-transactions)
+* WebSocket: [https://github.com/jagoancoin/insight-api-jagoancoin#web-socket-api](https://github.com/jagoancoin/insight-api-jagoancoin#web-socket-api)
+* API: [https://github.com/jagoancoin/insight-api-jagoancoin#instantsend-transactions](https://github.com/jagoancoin/insight-api-jagoancoin#instantsend-transactions)
 
 #### Command line option
 

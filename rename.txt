@@ -1,0 +1,11 @@
+
+find . -type f -print0 | xargs -0 sed -i 's/The-Yerbas-Endeavor/jagoanpilot/g'
+find . -type f -print0 | xargs -0 sed -i 's/yerbascore/jagoancoin/g'
+find . -type f -print0 | xargs -0 sed -i 's/YerbasCore/JagoanCoin/g'
+find . -type f -print0 | xargs -0 sed -i 's/YerbasCrashInfo/JagoancoinCrashInfo/g'
+find . -type f -print0 | xargs -0 sed -i 's/Yerbas/Jagoancoin/g'
+find . -type f -print0 | xargs -0 sed -i 's/yerbas/jagoancoin/g'
+find . -type f -print0 | xargs -0 sed -i 's/YERBAS/JAGOANCOIN/g'
+find . -type f -print0 | xargs -0 sed -i 's/YERB/JGC/g'
+
+JRounqpcGRnS1wcH15AgJdnHzxwkLzJh1Q

@@ -8,7 +8,7 @@ Jagoancoin Core version 0.12.0 is now available from:
 
 Please report bugs using the issue tracker at github:
 
-  https://github.com/jagoanpilot/jagoancoin/issues
+  https://github.com/jagoancoin/jagoancoin/issues
 
 
 How to Upgrade

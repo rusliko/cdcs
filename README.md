@@ -6,8 +6,9 @@ Welcome to Jagoancoin
 Jagoancoin is a CPU mineable cryptocurrency and open source software developed under MIT license. It can be mined on GPU too, but CPU mining is more efficient.
 
 # Wallets
-- [Download Jagoancoin Core wallet for Windows](https://github.com/JagoanCoin/jagoancoin/releases/)
-- [Download Jagoancoin Core wallet for Debian / Ubuntu Linux](https://github.com/JagoanCoin/jagoancoin/releases/)
+- [Download Jagoancoin Core wallet for Windows](https://github.com/Jagoanpilot/jagoancoin/releases/)
+- [Download Jagoancoin Core wallet for Macos](https://github.com/Jagoanpilot/jagoancoin/releases/)
+- [Download Jagoancoin Core wallet for Ubuntu](https://github.com/Jagoanpilot/jagoancoin/releases/)
 
 # Coin specifications:
 &nbsp; | &nbsp;

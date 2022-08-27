@@ -27,8 +27,8 @@ Build-Depends: debhelper,
  libzmq3-dev
 Standards-Version: 3.9.2
 Homepage: https://www.jagoancoin.org/
-Vcs-Git: git://github.com/jagoanpilot/jagoancoin.git
-Vcs-Browser: https://github.com/jagoanpilot/jagoancoin
+Vcs-Git: git://github.com/jagoancoin/jagoancoin.git
+Vcs-Browser: https://github.com/jagoancoin/jagoancoin
 
 Package: jagoancoind
 Architecture: any

@@ -1,11 +1,11 @@
 // Copyright (c) 2014-2019 The Dash Core developers
-// Copyright (c) 2020 The Raptoreum developers
+// Copyright (c) 2020-2022 The Jagoancoin developers
 // Distributed under the MIT software license, see the accompanying
 #ifndef JAGOANCOIN_HDCHAIN_H
 #define JAGOANCOIN_HDCHAIN_H
 
-#include "key.h"
-#include "sync.h"
+#include <key.h>
+#include <sync.h>
 
 /* hd account data model */
 class CHDAccount

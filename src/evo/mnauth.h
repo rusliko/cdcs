@@ -1,13 +1,13 @@
 // Copyright (c) 2019 The Dash Core developers
-// Copyright (c) 2020 The Raptoreum developers
+// Copyright (c) 2020-2022 The Jagoancoin developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #ifndef JAGOANCOIN_MNAUTH_H
 #define JAGOANCOIN_MNAUTH_H
 
-#include "bls/bls.h"
-#include "serialize.h"
+#include <bls/bls.h>
+#include <serialize.h>
 
 class CConnman;
 class CDataStream;

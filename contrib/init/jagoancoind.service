@@ -3,13 +3,13 @@ Description=Jagoancoin's distributed currency daemon
 After=network.target
 
 [Service]
-User=jagoancoin
-Group=jagoancoin
+User=jagoancoincore
+Group=jagoancoincore
 
 Type=forking
 PIDFile=/var/lib/jagoancoind/jagoancoind.pid
 ExecStart=/usr/bin/jagoancoind -daemon -pid=/var/lib/jagoancoind/jagoancoind.pid \
--conf=/etc/jagoancoin/jagoancoin.conf -datadir=/var/lib/jagoancoind -disablewallet
+-conf=/etc/jagoancoincore/jagoancoin.conf -datadir=/var/lib/jagoancoind -disablewallet
 
 Restart=always
 PrivateTmp=true
