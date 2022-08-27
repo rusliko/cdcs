@@ -1,5 +1,5 @@
 // Copyright (c) 2014-2019 The Dash Core developers
-// Copyright (c) 2020 The Jagoancoin developers
+// Copyright (c) 2020 The Raptoreum developers
 // Distributed under the MIT software license, see the accompanying
 #ifndef JAGOANCOIN_HDCHAIN_H
 #define JAGOANCOIN_HDCHAIN_H
