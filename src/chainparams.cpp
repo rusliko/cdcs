@@ -524,10 +524,10 @@ public:
 
         // The best chain should have at least this much work.
         //consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000c2a6d13d4138"); // 0
-        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000000000"); // 0
+        consensus.nMinimumChainWork = uint256S("0x0"); // 0
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x3d465db645a9f6ebfbc23cc32dd93c624e382c05dec62cf4ac01879b6288c043"); // 0
+        consensus.defaultAssumeValid = uint256S("0x0"); // 0
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -540,10 +540,10 @@ public:
         pchMessageStart[3]  = 0x60;
         nDefaultPort = 17899;
         nPruneAfterHeight = 100000;
-      //FindMainNetGenesisBlock(1660502138, 0x20001fff, "main");
-        genesis = CreateGenesisBlock(1660502138, 171, 0x20001fff, 4, 5000 * COIN);
+      	//FindMainNetGenesisBlock(1660502138, 0x20001fff, "main");
+        genesis = CreateGenesisBlock(1660502138, 338, 0x20001fff, 4, 5000 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x3d465db645a9f6ebfbc23cc32dd93c624e382c05dec62cf4ac01879b6288c043"));
+        assert(consensus.hashGenesisBlock == uint256S("0xe78a0b431e958a4f52af66d780dbf46c569dac677c6984400e7bd3c6b049e5b1"));
         assert(genesis.hashMerkleRoot == uint256S("0x5110a1e5a27a7a58944e5581e0699bd4731fdedc1e705757ecea5b5d8b5631a4"));
 
         vSeeds.emplace_back("seed01.jagoancoin.org");
@@ -581,7 +581,7 @@ public:
             {840840, 2000000 * COIN},
             {INT_MAX, 2500000 * COIN}
           },
-          { {5761, 0}, {INT_MAX, 25} }
+          { {8400, 0}, {INT_MAX, 25} }
         );
         //FutureRewardShare defaultShare(0.8,0.2,0.0);
         consensus.nFutureRewardShare = Consensus::FutureRewardShare(0.8,0.2,0.0);
@@ -617,8 +617,10 @@ public:
         fBIP9CheckSmartnodesUpgraded = true;
 
         checkpointData = {
-          {  {0, uint256S("0x3d465db645a9f6ebfbc23cc32dd93c624e382c05dec62cf4ac01879b6288c043")} }
-	};
+            {
+
+            }
+        };
 
         chainTxData = ChainTxData{
           1660502138,   // * UNIX timestamp of last known number of transactions (Block 0)
@@ -695,10 +697,10 @@ public:
         pchMessageStart[3]  = 0xb7;
         nDefaultPort = 27899;
         nPruneAfterHeight = 1000;
-        //FindMainNetGenesisBlock(1660502138,  0x20001fff, "test");
-        genesis = CreateGenesisBlock(1660502138, 171, 0x20001fff, 4, 5000 * COIN);
+        //FindMainNetGenesisBlock(1660502140, 0x20001fff, "test");
+        genesis = CreateGenesisBlock(1660502140, 1279, 0x20001fff, 4, 5000 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x3d465db645a9f6ebfbc23cc32dd93c624e382c05dec62cf4ac01879b6288c043"));
+        assert(consensus.hashGenesisBlock == uint256S("0xdbc7fc0bbd75ba59903817def7e2c713afa66496ef9217da220e2f68f8cfdda1"));
         assert(genesis.hashMerkleRoot == uint256S("0x5110a1e5a27a7a58944e5581e0699bd4731fdedc1e705757ecea5b5d8b5631a4"));
 
         vFixedSeeds.clear();
