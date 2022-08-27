@@ -1013,44 +1013,44 @@ NOTE:   unlike bitcoin we are using PREVIOUS block height here,
 */
 CAmount GetBlockSubsidy(int nPrevBits, int nPrevHeight, const Consensus::Params& consensusParams, bool fSuperblockPartOnly)
 {
-	double nSubsidy = 100;      // (declaring the reward variable and its original/default amount)
+	double nSubsidy = 2000;      // (declaring the reward variable and its original/default amount)
     const short owlings = 21262; // amount of blocks between 2 owlings
     int multiplier;              // integer number of owlings
     int tempHeight;              // number of blocks since last anchor     
-    if (nPrevHeight < 420) {
-        nSubsidy = 4.20; 
-    } else if ((nPrevHeight > 1000000) && (nPrevHeight < 2000000)) {
-        nSubsidy = 80; 
-    } else if ((nPrevHeight > 2000000) && (nPrevHeight < 3000000)) {
-        nSubsidy = 70;
-    } else if ((nPrevHeight > 3000000) && (nPrevHeight < 4000000)) {
-        nSubsidy = 50;
-    } else if ((nPrevHeight > 4000000) && (nPrevHeight < 5000000)) {
+    if (nPrevHeight < 840) {
+        nSubsidy = 84; 
+    } else if ((nPrevHeight > 2000000) && (nPrevHeight < 4000000)) {
+        nSubsidy = 1600; 
+    } else if ((nPrevHeight > 4000000) && (nPrevHeight < 6000000)) {
+        nSubsidy = 1400;
+    } else if ((nPrevHeight > 6000000) && (nPrevHeight < 8000000)) {
+        nSubsidy = 1000;
+    } else if ((nPrevHeight > 8000000) && (nPrevHeight < 10000000)) {
+        nSubsidy = 800;     
+    } else if ((nPrevHeight > 10000000) && (nPrevHeight < 12000000)) {
+        nSubsidy = 400;      
+    } else if ((nPrevHeight > 12000000) && (nPrevHeight < 14000000)) {
+        nSubsidy = 200;     
+    } else if ((nPrevHeight > 14000000) && (nPrevHeight < 16000000)) {
+        nSubsidy = 180;  
+    } else if ((nPrevHeight > 16000000) && (nPrevHeight < 18000000)) {
+        nSubsidy = 160;      
+    } else if ((nPrevHeight > 18000000) && (nPrevHeight < 20000000)) {
+        nSubsidy = 140;     
+    } else if ((nPrevHeight > 20000000) && (nPrevHeight < 22000000)) {
+        nSubsidy = 1200;    
+    } else if ((nPrevHeight > 22000000) && (nPrevHeight < 24000000)) {
+        nSubsidy = 100;     
+    } else if ((nPrevHeight > 24000000) && (nPrevHeight < 26000000)) {
+        nSubsidy = 84;  
+    } else if ((nPrevHeight > 26000000) && (nPrevHeight < 28000000)) {
+        nSubsidy = 60;      
+    } else if ((nPrevHeight > 28000000) && (nPrevHeight < 30000000)) {
         nSubsidy = 40;     
-    } else if ((nPrevHeight > 5000000) && (nPrevHeight < 6000000)) {
-        nSubsidy = 20;      
-    } else if ((nPrevHeight > 6000000) && (nPrevHeight < 7000000)) {
-        nSubsidy = 10;     
-    } else if ((nPrevHeight > 7000000) && (nPrevHeight < 8000000)) {
-        nSubsidy = 9;  
-    } else if ((nPrevHeight > 8000000) && (nPrevHeight < 9000000)) {
-        nSubsidy = 8;      
-    } else if ((nPrevHeight > 9000000) && (nPrevHeight < 10000000)) {
-        nSubsidy = 7;     
-    } else if ((nPrevHeight > 10000000) && (nPrevHeight < 11000000)) {
-        nSubsidy = 6;    
-    } else if ((nPrevHeight > 11000000) && (nPrevHeight < 12000000)) {
-        nSubsidy = 5;     
-    } else if ((nPrevHeight > 12000000) && (nPrevHeight < 13000000)) {
-        nSubsidy = 4.20;  
-    } else if ((nPrevHeight > 13000000) && (nPrevHeight < 14000000)) {
-        nSubsidy = 3;      
-    } else if ((nPrevHeight > 14000000) && (nPrevHeight < 15000000)) {
-        nSubsidy = 2;     
-    } else if ((nPrevHeight > 15000000) && (nPrevHeight < 16000000)) {
-        nSubsidy = 1; 
-    } else if (nPrevHeight > 16000000) {
-        nSubsidy = .420;
+    } else if ((nPrevHeight > 30000000) && (nPrevHeight < 32000000)) {
+        nSubsidy = 20; 
+    } else if (nPrevHeight > 32000000) {
+        nSubsidy = 8.40;
     }
     return nSubsidy * COIN;
 }

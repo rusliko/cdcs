@@ -79,8 +79,8 @@ static CBlock CreateDevNetGenesisBlock(const uint256 &prevBlockHash, const std::
  */
 static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
 {
-    const char* pszTimestamp = "09/May/2022 Jagoancoin. The 'Good Shit' coin!";
-    const CScript genesisOutputScript = CScript() << ParseHex("04678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef38c4f35504e51ec112de5c384df7ba0b8d578a4c702b6bf11d5f") << OP_CHECKSIG;
+    const char* pszTimestamp = "JagoanCoin Genesis 12 Agustus 2022";
+    const CScript genesisOutputScript = CScript() << ParseHex("04542a15f25915c63a838a2011b687340181224ea426c0a4004c7e039d0bd005a890dfec9f4122539654a008293276bdeb9f3b8bb156a0f32fd288e6b598064149") << OP_CHECKSIG;
     return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, genesisReward);
 }
 
@@ -410,7 +410,7 @@ public:
     CMainParams() {
         strNetworkID = "main";
         consensus.nSubsidyHalvingInterval = 210240; // Note: actual number of blocks per calendar year with DGW v3 is ~200700 (for example 449750 - 249050)
-        consensus.nSmartnodePaymentsStartBlock = 4200; // 
+        consensus.nSmartnodePaymentsStartBlock = 8400; // 
         consensus.nSmartnodePaymentsIncreaseBlock = 158000; // actual historical value
         consensus.nSmartnodePaymentsIncreasePeriod = 576*30; // 17280 - actual historical value
         consensus.nInstantSendConfirmationsRequired = 6;
@@ -435,7 +435,7 @@ public:
        // consensus.DIP0003EnforcementHeight = 1047200;
         consensus.powLimit = uint256S("00ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 20
         consensus.nPowTargetTimespan = 24 * 60 * 60; // Jagoancoin: 1 day
-        consensus.nPowTargetSpacing = 2 * 60; // Jagoancoin: 2 minutes
+        consensus.nPowTargetSpacing = 1 * 90; // Jagoancoin: 90 seconds
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
         consensus.nPowDGWHeight = 60;
@@ -448,68 +448,64 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = 1230767999; // December 31, 2008
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x000000000000000000000000000000000000000000000000000003f8009e1458"); // 0
+        consensus.nMinimumChainWork = uint256S("0x0"); // 0
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x6cb79413f86770f856556ce641e15beb45656915db9ce4511cc9d4853b532fe5"); // 0
+        consensus.defaultAssumeValid = uint256S("0x0"); // 0
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 32-bit integer with any alignment.
          */
-        pchMessageStart[0] = 0x79;//y
-        pchMessageStart[1] = 0x65;//e
-        pchMessageStart[2] = 0x72;//r
-        pchMessageStart[3] = 0x62;//b
-        nDefaultPort = 15420;
+        pchMessageStart[0]  = 0xed;
+        pchMessageStart[1]  = 0xfa;
+        pchMessageStart[2]  = 0x53;
+        pchMessageStart[3]  = 0x60;
+        nDefaultPort = 17899;
         nPruneAfterHeight = 100000;
-   //   FindMainNetGenesisBlock(1652138420, 0x20001fff, "main");
-        genesis = CreateGenesisBlock(1652138420, 3397, 0x20001fff, 4, 5000 * COIN);
-        consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0xeff0bbe5c1bbe1ef8da54822a18f528d6dc58232990bdb86e0a77ab2814ed12c"));
-        assert(genesis.hashMerkleRoot == uint256S("0xbfe15871764bf35d6391308fc2dab8846f177ba563d256b1764271987ec99bc0"));
 
-        vSeeds.emplace_back("weednode00.jagoancoin.org", true);
-        vSeeds.emplace_back("weednode01.jagoancoin.org", true);
-        vSeeds.emplace_back("weednode02.jagoancoin.org", true);
-        vSeeds.emplace_back("weednode03.jagoancoin.org", true);
-        vSeeds.emplace_back("weednode420.jagoancoin.org", true);
-        vSeeds.emplace_back("weednode05.jagoancoin.org", true);
-        vSeeds.emplace_back("149.28.180.9", true);
-        vSeeds.emplace_back("144.202.98.65", true);
-        vSeeds.emplace_back("45.32.140.6", true);
-        vSeeds.emplace_back("108.61.180.20", true);
+        genesis = CreateGenesisBlock(1660502138, 171, 0x20001fff, 4, 5000 * COIN);
+        consensus.hashGenesisBlock = genesis.GetHash();
+        assert(consensus.hashGenesisBlock == uint256S("0x3d465db645a9f6ebfbc23cc32dd93c624e382c05dec62cf4ac01879b6288c043"));
+        assert(genesis.hashMerkleRoot == uint256S("0x5110a1e5a27a7a58944e5581e0699bd4731fdedc1e705757ecea5b5d8b5631a4"));
+
+        vSeeds.emplace_back("node01.jagoancoin.org", true);
+        vSeeds.emplace_back("node02.jagoancoin.org", true);
+        vSeeds.emplace_back("explorer.jagoancoin.org", true);
+        vSeeds.emplace_back("api.jagoancoin.org", true);
+        vSeeds.emplace_back("wallet.jagoancoin.org", true);
+        vSeeds.emplace_back("bot.jagoancoin.org", true);
 
 
 
 
 
         // Jagoancoin addresses start with 'y'
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,140);
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,43);
         // Jagoancoin script addresses start with '8' or '9'
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,19);
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,102);
         // Jagoancoin private keys start with '7' or 'X'
-        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,128);
+        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,205);
         // Jagoancoin BIP32 pubkeys start with 'xpub' (Bitcoin defaults)
-        base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x88, 0xB2, 0x1E};
+        base58Prefixes[EXT_PUBLIC_KEY] = {0x03, 0x76, 0x13, 0x78};
         // Jagoancoin BIP32 prvkeys start with 'xprv' (Bitcoin defaults)
-        base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x88, 0xAD, 0xE4};
+        base58Prefixes[EXT_SECRET_KEY] = {0x03, 0x76, 0x13, 0xFD};
         // Jagoancoin BIP44 coin type is '5'
         nExtCoinType = gArgs.GetArg("-extcoinindex", 200);
         nExtCoinType = nExtCoinType == 0 ? 200 : nExtCoinType;
-        vector<FounderRewardStructure> rewardStructures = {  {INT_MAX, 5}// 5% founder/dev fee forever
+        vector<FounderRewardStructure> rewardStructures = {  {INT_MAX, 5}//
                                         										   };
-        consensus.nFounderPayment = FounderPayment(rewardStructures, 420);
+        consensus.nFounderPayment = FounderPayment(rewardStructures, 840);
         consensus.nCollaterals = SmartnodeCollaterals(
-          { {69420, 10000 * COIN},
-            {100420, 16000 * COIN},
-            {200420, 22000 * COIN}, 
-            {302420, 28000 * COIN},
-            {420420, 34000 * COIN},
-            {INT_MAX, 42000 * COIN}
+          { {138840, 500000 * COIN},
+            {200820, 800000 * COIN},
+            {400820, 1100000 * COIN}, 
+            {604840, 1500000 * COIN},
+            {840840, 2000000 * COIN},
+            {INT_MAX, 2500000 * COIN}
           },
-          { {4200, 0}, {INT_MAX, 20} }
+          { {8400, 0}, {INT_MAX, 25} }
         );
 
         //vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_main, pnSeed6_main + ARRAYLEN(pnSeed6_main));
@@ -533,24 +529,21 @@ public:
         nPoolMaxParticipants = 5;
         nFulfilledRequestExpireTime = 60*60; // fulfilled requests expire in 1 hour
 
-        vSporkAddresses = {"yWBtCoQuxeUx91YeLF6cii9XjHdCjGH3mh"};
+        vSporkAddresses = {"JgAg8BhUR7RmJ4yJ4VrAJEfKaNt83FqzPK"};
         nMinSporkKeys = 1;
         fBIP9CheckSmartnodesUpgraded = true;
 
         checkpointData = {
-          {  {0, uint256S("0xeff0bbe5c1bbe1ef8da54822a18f528d6dc58232990bdb86e0a77ab2814ed12c")}, 
-             {1420, uint256S("0x9cf529c09eaf90f1b1b96c681c203aa80e1840b1709c928ab6e840b562d54c34")},
-             {8837, uint256S("0x25c1c019d70e6990d3ed680fa9703cb84d620008a6cb8f635bbcdcef913dfbae")},
-             {16460, uint256S("0x6cb79413f86770f856556ce641e15beb45656915db9ce4511cc9d4853b532fe5")},
+          {  {0, uint256S("0x3d465db645a9f6ebfbc23cc32dd93c624e382c05dec62cf4ac01879b6288c043")}, 
              
           }
 	};
 
         chainTxData = ChainTxData{
-          1654276328,   // * UNIX timestamp of last known number of transactions (Block 0)
-              42622,   // * total number of transactions between genesis and that timestamp
+          1660502138,   // * UNIX timestamp of last known number of transactions (Block 0)
+              0,   // * total number of transactions between genesis and that timestamp
                         //   (the tx=... number in the SetBestChain debug.log lines)
-                 0.01    // * estimated number of transactions per second after that timestamp
+              0.01    // * estimated number of transactions per second after that timestamp
         };
     }
 };
@@ -605,17 +598,17 @@ public:
         // By default assume that the signatures in ancestors of this block are valid.
         consensus.defaultAssumeValid = uint256S("0x0"); // 0
 
-        pchMessageStart[0] = 0x7a;//t
-        pchMessageStart[0] = 0x79;//y
-        pchMessageStart[1] = 0x65;//e
-        pchMessageStart[2] = 0x72;//r
-        nDefaultPort = 20421;
+        pchMessageStart[0]  = 0x01;
+        pchMessageStart[1]  = 0xe4;
+        pchMessageStart[2]  = 0x16;
+        pchMessageStart[3]  = 0xb7;
+        nDefaultPort = 27899;
         nPruneAfterHeight = 1000;
-  //      FindMainNetGenesisBlock(1651158966, 0x20001fff, "test");
-        genesis = CreateGenesisBlock(1651158966, 5025, 0x20001fff, 4, 5000 * COIN);
+
+        genesis = CreateGenesisBlock(1660502138, 171, 0x20001fff, 4, 5000 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0xdfcc020dd96156eb9246cb7a3239169cbf45f0896cbc02a646905f5c8217b6bd"));
-        assert(genesis.hashMerkleRoot == uint256S("0xbfe15871764bf35d6391308fc2dab8846f177ba563d256b1764271987ec99bc0"));
+        assert(consensus.hashGenesisBlock == uint256S("0x3d465db645a9f6ebfbc23cc32dd93c624e382c05dec62cf4ac01879b6288c043"));
+        assert(genesis.hashMerkleRoot == uint256S("0x5110a1e5a27a7a58944e5581e0699bd4731fdedc1e705757ecea5b5d8b5631a4"));
 
         vFixedSeeds.clear();
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_test, pnSeed6_test + ARRAYLEN(pnSeed6_test));
@@ -629,15 +622,15 @@ public:
        // vSeeds.emplace_back("ny1.jagoancoin.com", true);
 
         // Testnet Jagoancoin addresses start with 'r'
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,123);
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,65);
         // Testnet Jagoancoin script addresses start with '8' or '9'
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,19);
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,105);
         // Testnet private keys start with '9' or 'c' (Bitcoin defaults)
-        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,239);
+        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,206);
         // Testnet Jagoancoin BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
-        base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x35, 0x87, 0xCF};
+        base58Prefixes[EXT_PUBLIC_KEY] = {0x03, 0x7B, 0xCF, 0xC4};
         // Testnet Jagoancoin BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
-        base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x35, 0x83, 0x94};
+        base58Prefixes[EXT_SECRET_KEY] = {0x03, 0x7B, 0xd0, 0x49};
 
         // Testnet Jagoancoin BIP44 coin type is '1' (All coin's testnet default)
         nExtCoinType = 10227;
@@ -660,7 +653,7 @@ public:
 
         vector<FounderRewardStructure> rewardStructures = {  {INT_MAX, 5}// 5% founder/dev fee forever
                                                 										   };
-		consensus.nFounderPayment = FounderPayment(rewardStructures, 200, "rbKpULX5CgTcwJ7KbzY3BTwzEqwpFYHqXd");
+		consensus.nFounderPayment = FounderPayment(rewardStructures, 200, "TFKSv42WhzLz8LysqrjbnK1RH3jcsr4SuA");
 
         fDefaultConsistencyChecks = false;
         fRequireStandard = false;
@@ -674,7 +667,7 @@ public:
         nPoolMaxParticipants = 5;
         nFulfilledRequestExpireTime = 5*60; // fulfilled requests expire in 5 minutes
 
-        vSporkAddresses = {"rsqc2caFRG6myRdzKipP4PpVW9LnFaG7CH"};
+        vSporkAddresses = {"TYhZZmJ7D9ujbF98AbRo8sVFYaURmV7dZr"};
         nMinSporkKeys = 1;
         fBIP9CheckSmartnodesUpgraded = true;
 
@@ -685,7 +678,7 @@ public:
         };
 
         chainTxData = ChainTxData{
-        	1618814931, // * UNIX timestamp of last known number of transactions (Block 213054)
+        	1660502138, // * UNIX timestamp of last known number of transactions (Block 213054)
             0,    // * total number of transactions between genesis and that timestamp
                         //   (the tx=... number in the SetBestChain debug.log lines)
             0.01        // * estimated number of transactions per second after that timestamp
@@ -865,17 +858,17 @@ public:
         // By default assume that the signatures in ancestors of this block are valid.
         consensus.defaultAssumeValid = uint256S("0x00");
 
-        pchMessageStart[0] = 0xfc;
-        pchMessageStart[1] = 0xc1;
-        pchMessageStart[2] = 0xb7;
-        pchMessageStart[3] = 0xdc;
+        pchMessageStart[0]  = 0xcf;
+        pchMessageStart[1]  = 0xc8;
+        pchMessageStart[2]  = 0x98;
+        pchMessageStart[3]  = 0x85;
         nDefaultPort = 19899;
         nPruneAfterHeight = 1000;
 
-        genesis = CreateGenesisBlock(1417713337, 1096447, 0x207fffff, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1660502238, 17, 0x207fffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x000008ca1832a4baf228eb1553c03d3a2c8e02399550dd6ea8d65cec3ef23d2e"));
-        assert(genesis.hashMerkleRoot == uint256S("0xe0028eb9648db56b1ac77cf090b99048a8007e2bb64b68f092c03c7f56a662c7"));
+        assert(consensus.hashGenesisBlock == uint256S("0x14edb99d0b544fe3295a50dd327a14da2aa01e1bc2b358e06055868d9e1f7688"));
+        assert(genesis.hashMerkleRoot == uint256S("0x5110a1e5a27a7a58944e5581e0699bd4731fdedc1e705757ecea5b5d8b5631a4"));
 
         vFixedSeeds.clear(); //!< Regtest mode doesn't have any fixed seeds.
         vSeeds.clear();      //!< Regtest mode doesn't have any DNS seeds.
@@ -892,7 +885,7 @@ public:
         nPoolMaxParticipants = 5;
 
         // privKey: cP4EKFyJsHT39LDqgdcB43Y3YXjNyjb5Fuas1GQSeAtjnZWmZEQK
-        vSporkAddresses = {"yj949n1UH6fDhw6HtVE5VMj2iSTaSWBMcW"};
+        vSporkAddresses = {"TDiNvQsxoJfxG2GvWZ9tKdX8WMkwmTuN9b"};
         nMinSporkKeys = 1;
         // regtest usually has no smartnodes in most tests, so don't check for upgraged MNs
         fBIP9CheckSmartnodesUpgraded = false;
@@ -902,7 +895,7 @@ public:
 
         checkpointData = (CCheckpointData) {
             {
-                {0, uint256S("0x000008ca1832a4baf228eb1553c03d3a2c8e02399550dd6ea8d65cec3ef23d2e")},
+                {0, uint256S("0x018ef252e4df8ba5ab9eb0084992aa6ab64f902a0a5414ed18053f6f88854e7e")},
             }
         };
 
@@ -913,15 +906,15 @@ public:
         };
 
         // Regtest Jagoancoin addresses start with 'y'
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,140);
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,65);
         // Regtest Jagoancoin script addresses start with '8' or '9'
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,19);
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,105);
         // Regtest private keys start with '9' or 'c' (Bitcoin defaults)
-        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,239);
+        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,206);
         // Regtest Jagoancoin BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
-        base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x35, 0x87, 0xCF};
+        base58Prefixes[EXT_PUBLIC_KEY] = {0x03, 0x7B, 0xCF, 0xC4};
         // Regtest Jagoancoin BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
-        base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x35, 0x83, 0x94};
+        base58Prefixes[EXT_SECRET_KEY] = {0x03, 0x7B, 0xD0, 0x49};
 
         // Regtest Jagoancoin BIP44 coin type is '1' (All coin's testnet default)
         nExtCoinType = 1;
