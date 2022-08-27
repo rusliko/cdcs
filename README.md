@@ -2,20 +2,24 @@ Welcome to Jagoancoin
 ===========================
 
  
-Introduction
-------------
-JGC - The "Good Shit" coin!
+# About Jagoancoin
+Jagoancoin is a CPU mineable cryptocurrency and open source software developed under MIT license. It can be mined on GPU too, but CPU mining is more efficient.
 
-WARNING! Jagoancoin is a work in progress...Use at your own risk!
+# Wallets
+- [Download Jagoancoin Core wallet for Windows](https://github.com/JagoanCoin/jagoancoin/releases/)
+- [Download Jagoancoin Core wallet for Debian / Ubuntu Linux](https://github.com/JagoanCoin/jagoancoin/releases/)
 
-Jagoancoin is a community driven, developmental, grassroots, digital currency that enables instant payments to anyone, anywhere in the world. The Jagoancoin Coin uses peer-to-peer technology to operate with no central authority: managing transactions and issuing money are carried out collectively by the network. Jagoancoin is a code fork of Bitcoin/Dash/Raptoreum and inherits current and optionally future features such as chain locks, oracles etc. The inspiration for the name Jagoancoin is derived from the Latin(herba) and Español(hierba) words for herb, grass, or weeds.
-
- We are further expanding capabilities by adding the following features:
-
-A)	The deployment of a unique asset layer.  ---pushing you luck here, but maybe ;)
-
-B)	Colabration with realworld vendors offering rewards and incentives to utilize Jagoancoin for everyday goods and services. 
-
+# Coin specifications:
+&nbsp; | &nbsp;
+------ | ------
+**Coin name:** | Jagoancoin (JGC)
+**Initial block reward:** | 2000 JGC
+**Average block time:** | 90 Second
+**Smartnode Payments Start Block**: | 8400
+**Algorithm:** | GhostRider (ASIC and FPGA resistance)
+**Premine:** | none
+**Block Reward:** | 70% Miners 25% Smartnode 3% Dev 1% Exchange 1 % Community Reward.
+ 
 
 License
 -------
@@ -27,7 +31,7 @@ Development Process
 -------------------
 
 The `master` branch is meant to be stable. Development is done in separate branches.
-[Tags](https://github.com/jagoanpilot/jagoancoin/tags) are created to indicate new official,
+[Tags](https://github.com/JagoanCoin/jagoancoin/tags) are created to indicate new official,
 stable release versions of Jagoancoin Core.
 
 The contribution workflow is described in [CONTRIBUTING.md](CONTRIBUTING.md).
