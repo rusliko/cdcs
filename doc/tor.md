@@ -1,7 +1,7 @@
-TOR SUPPORT IN YERBAS CORE
+TOR SUPPORT IN JAGOANCOIN CORE
 =======================
 
-It is possible to run Yerbas Core as a Tor hidden service, and connect to such services.
+It is possible to run Jagoancoin Core as a Tor hidden service, and connect to such services.
 
 The following directions assume you have a Tor proxy running on port 9050. Many
 distributions default to having a SOCKS proxy listening on port 9050, but others
@@ -10,10 +10,10 @@ See [Tor Project FAQ:TBBSocksPort](https://www.torproject.org/docs/faq.html.en#T
 for how to properly configure Tor.
 
 
-1. Run Yerbas Core behind a Tor proxy
+1. Run Jagoancoin Core behind a Tor proxy
 ----------------------------------
 
-The first step is running Yerbas Core behind a Tor proxy. This will already make all
+The first step is running Jagoancoin Core behind a Tor proxy. This will already make all
 outgoing connections be anonymized, but more is possible.
 
 	-proxy=ip:port  Set the proxy server. If SOCKS5 is selected (default), this proxy
@@ -37,31 +37,31 @@ outgoing connections be anonymized, but more is possible.
 An example how to start the client if the Tor proxy is running on local host on
 port 9050 and only allows .onion nodes to connect:
 
-	./yerbasd -onion=127.0.0.1:9050 -onlynet=tor -listen=0 -addnode=ssapp53tmftyjmjb.onion
+	./jagoancoind -onion=127.0.0.1:9050 -onlynet=tor -listen=0 -addnode=ssapp53tmftyjmjb.onion
 
 In a typical situation, this suffices to run behind a Tor proxy:
 
-	./yerbasd -proxy=127.0.0.1:9050
+	./jagoancoind -proxy=127.0.0.1:9050
 
 
-2. Run a Yerbas Core hidden server
+2. Run a Jagoancoin Core hidden server
 -------------------------------
 
 If you configure your Tor system accordingly, it is possible to make your node also
 reachable from the Tor network. Add these lines to your /etc/tor/torrc (or equivalent
 config file):
 
-	HiddenServiceDir /var/lib/tor/yerbascore-service/
+	HiddenServiceDir /var/lib/tor/jagoancoin-service/
 	HiddenServicePort 9999 127.0.0.1:9999
 	HiddenServicePort 19999 127.0.0.1:19999
 
 The directory can be different of course, but (both) port numbers should be equal to
-your yerbasd's P2P listen port (9999 by default).
+your jagoancoind's P2P listen port (9999 by default).
 
-	-externalip=X   You can tell Yerbas Core about its publicly reachable address using
+	-externalip=X   You can tell Jagoancoin Core about its publicly reachable address using
 	                this option, and this can be a .onion address. Given the above
 	                configuration, you can find your onion address in
-	                /var/lib/tor/yerbascore-service/hostname. Onion addresses are given
+	                /var/lib/tor/jagoancoin-service/hostname. Onion addresses are given
 	                preference for your node to advertise itself with, for connections
 	                coming from unroutable addresses (such as 127.0.0.1, where the
 	                Tor proxy typically runs).
@@ -78,28 +78,28 @@ your yerbasd's P2P listen port (9999 by default).
 
 In a typical situation, where you're only reachable via Tor, this should suffice:
 
-	./yerbasd -proxy=127.0.0.1:9050 -externalip=ssapp53tmftyjmjb.onion -listen
+	./jagoancoind -proxy=127.0.0.1:9050 -externalip=ssapp53tmftyjmjb.onion -listen
 
 (obviously, replace the Onion address with your own). It should be noted that you still
 listen on all devices and another node could establish a clearnet connection, when knowing
 your address. To mitigate this, additionally bind the address of your Tor proxy:
 
-	./yerbasd ... -bind=127.0.0.1
+	./jagoancoind ... -bind=127.0.0.1
 
 If you don't care too much about hiding your node, and want to be reachable on IPv4
 as well, use `discover` instead:
 
-	./yerbasd ... -discover
+	./jagoancoind ... -discover
 
 and open port 9999 on your firewall (or use -upnp).
 
 If you only want to use Tor to reach onion addresses, but not use it as a proxy
 for normal IPv4/IPv6 communication, use:
 
-	./yerbasd -onion=127.0.0.1:9050 -externalip=ssapp53tmftyjmjb.onion -discover
+	./jagoancoind -onion=127.0.0.1:9050 -externalip=ssapp53tmftyjmjb.onion -discover
 
 
-3. List of known Yerbas Core Tor relays
+3. List of known Jagoancoin Core Tor relays
 ------------------------------------
 
 Note: All these nodes are hosted by smartnodehosting.com
@@ -121,24 +121,24 @@ Note: All these nodes are hosted by smartnodehosting.com
 
 Starting with Tor version 0.2.7.1 it is possible, through Tor's control socket
 API, to create and destroy 'ephemeral' hidden services programmatically.
-Yerbas Core has been updated to make use of this.
+Jagoancoin Core has been updated to make use of this.
 
 This means that if Tor is running (and proper authentication has been configured),
-Yerbas Core automatically creates a hidden service to listen on. This will positively 
+Jagoancoin Core automatically creates a hidden service to listen on. This will positively 
 affect the number of available .onion nodes.
 
-This new feature is enabled by default if Yerbas Core is listening (`-listen`), and
+This new feature is enabled by default if Jagoancoin Core is listening (`-listen`), and
 requires a Tor connection to work. It can be explicitly disabled with `-listenonion=0`
 and, if not disabled, configured using the `-torcontrol` and `-torpassword` settings.
 To show verbose debugging information, pass `-debug=tor`.
 
 Connecting to Tor's control socket API requires one of two authentication methods to be 
-configured. For cookie authentication the user running yerbasd must have write access 
+configured. For cookie authentication the user running jagoancoind must have write access 
 to the `CookieAuthFile` specified in Tor configuration. In some cases this is 
 preconfigured and the creation of a hidden service is automatic. If permission problems 
 are seen with `-debug=tor` they can be resolved by adding both the user running tor and 
-the user running yerbasd to the same group and setting permissions appropriately. On 
-Debian-based systems the user running yerbasd can be added to the debian-tor group, 
+the user running jagoancoind to the same group and setting permissions appropriately. On 
+Debian-based systems the user running jagoancoind can be added to the debian-tor group, 
 which has the appropriate permissions. An alternative authentication method is the use 
 of the `-torpassword` flag and a `hash-password` which can be enabled and specified in 
 Tor configuration.

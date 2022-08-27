@@ -4,7 +4,7 @@
 
 #include "hash.h"
 #include "utilstrencodings.h"
-#include "test/test_yerbas.h"
+#include "test/test_jagoancoin.h"
 
 #include <vector>
 

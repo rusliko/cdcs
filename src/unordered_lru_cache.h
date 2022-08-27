@@ -1,10 +1,10 @@
 // Copyright (c) 2019-2020 The Dash Core developers
-// Copyright (c) 2020 The Yerbas developers
+// Copyright (c) 2020 The Jagoancoin developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef YERBAS_UNORDERED_LRU_CACHE_H
-#define YERBAS_UNORDERED_LRU_CACHE_H
+#ifndef JAGOANCOIN_UNORDERED_LRU_CACHE_H
+#define JAGOANCOIN_UNORDERED_LRU_CACHE_H
 
 #include <unordered_map>
 
@@ -122,4 +122,4 @@ private:
     }
 };
 
-#endif // YERBAS_UNORDERED_LRU_CACHE_H
+#endif // JAGOANCOIN_UNORDERED_LRU_CACHE_H

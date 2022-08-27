@@ -1,4 +1,4 @@
 #!/bin/bash
-# use testnet settings,  if you need mainnet,  use ~/.yerbascore/yerbasd.pid file instead
-yerbas_pid=$(<~/.yerbascore/testnet3/yerbasd.pid)
-sudo gdb -batch -ex "source debug.gdb" yerbasd ${yerbas_pid}
+# use testnet settings,  if you need mainnet,  use ~/.jagoancoin/jagoancoind.pid file instead
+jagoancoin_pid=$(<~/.jagoancoin/testnet3/jagoancoind.pid)
+sudo gdb -batch -ex "source debug.gdb" jagoancoind ${jagoancoin_pid}

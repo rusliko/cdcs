@@ -6,14 +6,14 @@ reset-files.bash
 *.tar.gz
 
 *.exe
-src/yerbas
-src/yerbasd
-src/yerbas-cli
-src/yerbas-tx
-src/test/test_yerbas
-src/test/test_yerbas_fuzzy
-src/qt/test/test_yerbas-qt
-src/bench/bench_yerbas
+src/jagoancoin
+src/jagoancoind
+src/jagoancoin-cli
+src/jagoancoin-tx
+src/test/test_jagoancoin
+src/test/test_jagoancoin_fuzzy
+src/qt/test/test_jagoancoin-qt
+src/bench/bench_jagoancoin
 
 # autoreconf
 Makefile.in
@@ -36,8 +36,8 @@ config.log
 config.status
 configure
 libtool
-src/config/yerbas-config.h
-src/config/yerbas-config.h.in
+src/config/jagoancoin-config.h
+src/config/jagoancoin-config.h.in
 src/config/stamp-h1
 share/setup.nsi
 share/qt/Info.plist
@@ -82,13 +82,13 @@ libconftest.dylib*
 # Compilation and Qt preprocessor part
 *.qm
 Makefile
-yerbas-qt
-Yerbas-Qt.app
+jagoancoin-qt
+Jagoancoin-Qt.app
 !/depends/Makefile
 
 # Unit-tests
 Makefile.test
-yerbas-qt_test
+jagoancoin-qt_test
 
 # Resources cpp
 qrc_*.cpp
@@ -101,7 +101,7 @@ build
 *.gcno
 *.gcda
 /*.info
-test_yerbas.coverage/
+test_jagoancoin.coverage/
 total.coverage/
 coverage_percent.txt
 
@@ -119,15 +119,15 @@ test/cache/*
 .autotools
 /doc/doxygen/
 
-libyerbasconsensus.pc
+libjagoancoinconsensus.pc
 contrib/devtools/split-debug.sh
-src/qt/yerbas-qt.bash
+src/qt/jagoancoin-qt.bash
 qa/pull-tester/tests-config.sh
 
 #development symlinks
-yerbas-cli
-yerbasd
-yerbas-qt
+jagoancoin-cli
+jagoancoind
+jagoancoin-qt
 make
 
 /docker/bin

@@ -1,4 +1,4 @@
-/* Copyright (c) 2020 The Yerbas Core developers
+/* Copyright (c) 2020 The Jagoancoin Core developers
  * Distributed under the MIT software license, see the accompanying
  * file COPYING or http://www.opensource.org/licenses/mit-license.php.
  *
@@ -8,8 +8,8 @@
  *      Author: tri
  */
 
-#ifndef YERBAS_SELECTION_H_
-#define YERBAS_SELECTION_H_
+#ifndef JAGOANCOIN_SELECTION_H_
+#define JAGOANCOIN_SELECTION_H_
 
 #include "uint256.h"
 #include <string>
@@ -90,4 +90,4 @@ protected:
 
 };
 
-#endif /* YERBAS_SELECTION_H_ */
+#endif /* JAGOANCOIN_SELECTION_H_ */

@@ -17,7 +17,7 @@ rm -f src/test/buildenv.py
 rm -f src/test/data/*.json.h
 rm -f src/test/data/*.raw.h
 
-rm -rf test_bitcoin.coverage/ yerbas-gtest.coverage/ total.coverage/
+rm -rf test_bitcoin.coverage/ jagoancoin-gtest.coverage/ total.coverage/
 
 rm -rf cache
 rm -rf target
@@ -69,10 +69,10 @@ clean_dirs .libs
 clean_dirs __pycache__
 
 clean_exe src/bench/bench_bitcoin
-clean_exe src/yerbas-cli
-clean_exe src/yerbasd
-clean_exe src/yerbas-gtest
-clean_exe src/yerbas-tx
+clean_exe src/jagoancoin-cli
+clean_exe src/jagoancoind
+clean_exe src/jagoancoin-gtest
+clean_exe src/jagoancoin-tx
 clean_exe src/test/test_bitcoin
 
 clean_exe src/leveldb/db_bench

@@ -1,7 +1,7 @@
 // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin Core developers
 // Copyright (c) 2014-2020 The Dash Core developers
-// Copyright (c) 2020 The Yerbas developers
+// Copyright (c) 2020 The Jagoancoin developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -79,7 +79,7 @@ static CBlock CreateDevNetGenesisBlock(const uint256 &prevBlockHash, const std::
  */
 static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
 {
-    const char* pszTimestamp = "09/May/2022 Yerbas. The 'Good Shit' coin!";
+    const char* pszTimestamp = "09/May/2022 Jagoancoin. The 'Good Shit' coin!";
     const CScript genesisOutputScript = CScript() << ParseHex("04678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef38c4f35504e51ec112de5c384df7ba0b8d578a4c702b6bf11d5f") << OP_CHECKSIG;
     return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, genesisReward);
 }
@@ -434,8 +434,8 @@ public:
         consensus.DIP0008Enabled = true;
        // consensus.DIP0003EnforcementHeight = 1047200;
         consensus.powLimit = uint256S("00ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 20
-        consensus.nPowTargetTimespan = 24 * 60 * 60; // Yerbas: 1 day
-        consensus.nPowTargetSpacing = 2 * 60; // Yerbas: 2 minutes
+        consensus.nPowTargetTimespan = 24 * 60 * 60; // Jagoancoin: 1 day
+        consensus.nPowTargetSpacing = 2 * 60; // Jagoancoin: 2 minutes
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
         consensus.nPowDGWHeight = 60;
@@ -470,12 +470,12 @@ public:
         assert(consensus.hashGenesisBlock == uint256S("0xeff0bbe5c1bbe1ef8da54822a18f528d6dc58232990bdb86e0a77ab2814ed12c"));
         assert(genesis.hashMerkleRoot == uint256S("0xbfe15871764bf35d6391308fc2dab8846f177ba563d256b1764271987ec99bc0"));
 
-        vSeeds.emplace_back("weednode00.yerbas.org", true);
-        vSeeds.emplace_back("weednode01.yerbas.org", true);
-        vSeeds.emplace_back("weednode02.yerbas.org", true);
-        vSeeds.emplace_back("weednode03.yerbas.org", true);
-        vSeeds.emplace_back("weednode420.yerbas.org", true);
-        vSeeds.emplace_back("weednode05.yerbas.org", true);
+        vSeeds.emplace_back("weednode00.jagoancoin.org", true);
+        vSeeds.emplace_back("weednode01.jagoancoin.org", true);
+        vSeeds.emplace_back("weednode02.jagoancoin.org", true);
+        vSeeds.emplace_back("weednode03.jagoancoin.org", true);
+        vSeeds.emplace_back("weednode420.jagoancoin.org", true);
+        vSeeds.emplace_back("weednode05.jagoancoin.org", true);
         vSeeds.emplace_back("149.28.180.9", true);
         vSeeds.emplace_back("144.202.98.65", true);
         vSeeds.emplace_back("45.32.140.6", true);
@@ -485,17 +485,17 @@ public:
 
 
 
-        // Yerbas addresses start with 'y'
+        // Jagoancoin addresses start with 'y'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,140);
-        // Yerbas script addresses start with '8' or '9'
+        // Jagoancoin script addresses start with '8' or '9'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,19);
-        // Yerbas private keys start with '7' or 'X'
+        // Jagoancoin private keys start with '7' or 'X'
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,128);
-        // Yerbas BIP32 pubkeys start with 'xpub' (Bitcoin defaults)
+        // Jagoancoin BIP32 pubkeys start with 'xpub' (Bitcoin defaults)
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x88, 0xB2, 0x1E};
-        // Yerbas BIP32 prvkeys start with 'xprv' (Bitcoin defaults)
+        // Jagoancoin BIP32 prvkeys start with 'xprv' (Bitcoin defaults)
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x88, 0xAD, 0xE4};
-        // Yerbas BIP44 coin type is '5'
+        // Jagoancoin BIP44 coin type is '5'
         nExtCoinType = gArgs.GetArg("-extcoinindex", 200);
         nExtCoinType = nExtCoinType == 0 ? 200 : nExtCoinType;
         vector<FounderRewardStructure> rewardStructures = {  {INT_MAX, 5}// 5% founder/dev fee forever
@@ -586,8 +586,8 @@ public:
         consensus.BIP147Enabled = true;
      //   consensus.DIP0003EnforcementHeight = 7300;
         consensus.powLimit = uint256S("00ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 20
-        consensus.nPowTargetTimespan = 24 * 60 * 60; // Yerbas: 1 day
-        consensus.nPowTargetSpacing = 60; // Yerbas: 1 minutes
+        consensus.nPowTargetTimespan = 24 * 60 * 60; // Jagoancoin: 1 day
+        consensus.nPowTargetSpacing = 60; // Jagoancoin: 1 minutes
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = false;
         consensus.nPowDGWHeight = 60;
@@ -625,21 +625,21 @@ public:
        // vSeeds.emplace_back("47.151.7.226", true);
        // vSeeds.emplace_back("62.171.153.224", true);
        // vSeeds.emplace_back("98.38.235.195", true);
-       // vSeeds.emplace_back("ger1.yerbas.com", true);
-       // vSeeds.emplace_back("ny1.yerbas.com", true);
+       // vSeeds.emplace_back("ger1.jagoancoin.com", true);
+       // vSeeds.emplace_back("ny1.jagoancoin.com", true);
 
-        // Testnet Yerbas addresses start with 'r'
+        // Testnet Jagoancoin addresses start with 'r'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,123);
-        // Testnet Yerbas script addresses start with '8' or '9'
+        // Testnet Jagoancoin script addresses start with '8' or '9'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,19);
         // Testnet private keys start with '9' or 'c' (Bitcoin defaults)
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,239);
-        // Testnet Yerbas BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
+        // Testnet Jagoancoin BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x35, 0x87, 0xCF};
-        // Testnet Yerbas BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
+        // Testnet Jagoancoin BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x35, 0x83, 0x94};
 
-        // Testnet Yerbas BIP44 coin type is '1' (All coin's testnet default)
+        // Testnet Jagoancoin BIP44 coin type is '1' (All coin's testnet default)
         nExtCoinType = 10227;
 
         // long living quorum params
@@ -725,8 +725,8 @@ public:
         consensus.DIP0003Enabled = true; // DIP0003 activated immediately on devnet
        // consensus.DIP0003EnforcementHeight = 2; // DIP0003 activated immediately on devnet
         consensus.powLimit = uint256S("7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 1
-        consensus.nPowTargetTimespan = 24 * 60 * 60; // Yerbas: 1 day
-        consensus.nPowTargetSpacing = 2.5 * 60; // Yerbas: 2.5 minutes
+        consensus.nPowTargetTimespan = 24 * 60 * 60; // Jagoancoin: 1 day
+        consensus.nPowTargetSpacing = 2.5 * 60; // Jagoancoin: 2.5 minutes
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = false;
         consensus.nPowDGWHeight = 60;
@@ -763,20 +763,20 @@ public:
 
         vFixedSeeds.clear();
         vSeeds.clear();
-        //vSeeds.push_back(CDNSSeedData("yerbasevo.org",  "devnet-seed.yerbasevo.org"));
+        //vSeeds.push_back(CDNSSeedData("jagoancoinevo.org",  "devnet-seed.jagoancoinevo.org"));
 
-        // Testnet Yerbas addresses start with 'y'
+        // Testnet Jagoancoin addresses start with 'y'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,140);
-        // Testnet Yerbas script addresses start with '8' or '9'
+        // Testnet Jagoancoin script addresses start with '8' or '9'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,19);
         // Testnet private keys start with '9' or 'c' (Bitcoin defaults)
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,239);
-        // Testnet Yerbas BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
+        // Testnet Jagoancoin BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x35, 0x87, 0xCF};
-        // Testnet Yerbas BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
+        // Testnet Jagoancoin BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x35, 0x83, 0x94};
 
-        // Testnet Yerbas BIP44 coin type is '1' (All coin's testnet default)
+        // Testnet Jagoancoin BIP44 coin type is '1' (All coin's testnet default)
         nExtCoinType = 1;
 
         // long living quorum params
@@ -847,8 +847,8 @@ public:
         consensus.DIP0003Enabled = true;
        // consensus.DIP0003EnforcementHeight = 500;
         consensus.powLimit = uint256S("7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 1
-        consensus.nPowTargetTimespan = 24 * 60 * 60; // Yerbas: 1 day
-        consensus.nPowTargetSpacing = 2.5 * 60; // Yerbas: 2.5 minutes
+        consensus.nPowTargetTimespan = 24 * 60 * 60; // Jagoancoin: 1 day
+        consensus.nPowTargetSpacing = 2.5 * 60; // Jagoancoin: 2.5 minutes
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = true;
         consensus.nPowDGWHeight = 60;
@@ -912,18 +912,18 @@ public:
             0
         };
 
-        // Regtest Yerbas addresses start with 'y'
+        // Regtest Jagoancoin addresses start with 'y'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,140);
-        // Regtest Yerbas script addresses start with '8' or '9'
+        // Regtest Jagoancoin script addresses start with '8' or '9'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,19);
         // Regtest private keys start with '9' or 'c' (Bitcoin defaults)
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,239);
-        // Regtest Yerbas BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
+        // Regtest Jagoancoin BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x35, 0x87, 0xCF};
-        // Regtest Yerbas BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
+        // Regtest Jagoancoin BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x35, 0x83, 0x94};
 
-        // Regtest Yerbas BIP44 coin type is '1' (All coin's testnet default)
+        // Regtest Jagoancoin BIP44 coin type is '1' (All coin's testnet default)
         nExtCoinType = 1;
 
         // long living quorum params

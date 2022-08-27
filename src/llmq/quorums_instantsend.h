@@ -1,10 +1,10 @@
 // Copyright (c) 2019-2020 The Dash Core developers
-// Copyright (c) 2020 The Yerbas developers
+// Copyright (c) 2020 The Jagoancoin developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef YERBAS_QUORUMS_INSTANTSEND_H
-#define YERBAS_QUORUMS_INSTANTSEND_H
+#ifndef JAGOANCOIN_QUORUMS_INSTANTSEND_H
+#define JAGOANCOIN_QUORUMS_INSTANTSEND_H
 
 #include "quorums_signing.h"
 
@@ -178,4 +178,4 @@ bool IsInstantSendEnabled();
 
 } // namespace llmq
 
-#endif//YERBAS_QUORUMS_INSTANTSEND_H
+#endif//JAGOANCOIN_QUORUMS_INSTANTSEND_H

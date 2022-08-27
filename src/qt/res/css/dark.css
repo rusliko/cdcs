@@ -735,16 +735,16 @@ WalletFrame {
     color: #ccc;
     }
     
-    /* About Yerbas Dialog */
+    /* About Jagoancoin Dialog */
     QDialog#AboutDialog {
     background-color: #0f130d;
     }
     
-    QDialog#AboutDialog QLabel#label, QDialog#AboutDialog QLabel#copyrightLabel, QDialog#AboutDialog QLabel#label_2 { /* About Yerbas Contents */
+    QDialog#AboutDialog QLabel#label, QDialog#AboutDialog QLabel#copyrightLabel, QDialog#AboutDialog QLabel#label_2 { /* About Jagoancoin Contents */
     margin-left:10px;
     }
     
-    QDialog#AboutDialog QLabel#label_2 { /* Margin for About Yerbas text */
+    QDialog#AboutDialog QLabel#label_2 { /* Margin for About Jagoancoin text */
     margin-right:10px;
     }
     

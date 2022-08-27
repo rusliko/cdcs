@@ -8,7 +8,7 @@
 #include <string>
 #include <map>
 #include <univalue.h>
-#include "test/test_yerbas.h"
+#include "test/test_jagoancoin.h"
 
 #include <boost/test/unit_test.hpp>
 

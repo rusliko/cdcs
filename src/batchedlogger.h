@@ -1,10 +1,10 @@
 // Copyright (c) 2018-2019 The Dash Core developers
-// Copyright (c) 2020 The Yerbas developers
+// Copyright (c) 2020 The Jagoancoin developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef YERBAS_BATCHEDLOGGER_H
-#define YERBAS_BATCHEDLOGGER_H
+#ifndef JAGOANCOIN_BATCHEDLOGGER_H
+#define JAGOANCOIN_BATCHEDLOGGER_H
 
 #include "tinyformat.h"
 
@@ -30,4 +30,4 @@ public:
     void Flush();
 };
 
-#endif//YERBAS_BATCHEDLOGGER_H
+#endif//JAGOANCOIN_BATCHEDLOGGER_H

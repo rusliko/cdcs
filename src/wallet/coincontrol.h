@@ -91,7 +91,7 @@ public:
         vOutpoints.assign(setSelected.begin(), setSelected.end());
     }
 
-    // Yerbas-specific helpers
+    // Jagoancoin-specific helpers
 
     void UsePrivateSend(bool fUsePrivateSend)
     {

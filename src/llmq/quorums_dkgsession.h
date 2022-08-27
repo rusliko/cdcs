@@ -1,10 +1,10 @@
 // Copyright (c) 2018-2020 The Dash Core developers
-// Copyright (c) 2020 The Yerbas developers
+// Copyright (c) 2020 The Jagoancoin developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef YERBAS_QUORUMS_DKGSESSION_H
-#define YERBAS_QUORUMS_DKGSESSION_H
+#ifndef JAGOANCOIN_QUORUMS_DKGSESSION_H
+#define JAGOANCOIN_QUORUMS_DKGSESSION_H
 
 #include "consensus/params.h"
 #include "net.h"
@@ -343,4 +343,4 @@ void SetSimulatedDKGErrorRate(const std::string& type, double rate);
 
 } // namespace llmq
 
-#endif //YERBAS_QUORUMS_DKGSESSION_H
+#endif //JAGOANCOIN_QUORUMS_DKGSESSION_H

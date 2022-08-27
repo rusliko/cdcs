@@ -7,17 +7,17 @@ define(_CLIENT_VERSION_BUILD, 3)
 define(_CLIENT_VERSION_IS_RELEASE, true)
 define(_COPYRIGHT_YEAR, 2022)
 define(_COPYRIGHT_HOLDERS,[The %s developers])
-define(_COPYRIGHT_HOLDERS_SUBSTITUTION,[[Yerbas Core]])
-AC_INIT([Yerbas Core],[_CLIENT_VERSION_MAJOR._CLIENT_VERSION_MINOR._CLIENT_VERSION_REVISION],[https://github.com/The-Yerbas-Endeavor/yerbas/issues],[yerbascore],[https://yerbas.org/])
+define(_COPYRIGHT_HOLDERS_SUBSTITUTION,[[Jagoancoin Core]])
+AC_INIT([Jagoancoin Core],[_CLIENT_VERSION_MAJOR._CLIENT_VERSION_MINOR._CLIENT_VERSION_REVISION],[https://github.com/jagoanpilot/jagoancoin/issues],[jagoancoin],[https://jagoancoin.org/])
 AC_CONFIG_SRCDIR([src/validation.cpp])
-AC_CONFIG_HEADERS([src/config/yerbas-config.h])
+AC_CONFIG_HEADERS([src/config/jagoancoin-config.h])
 AC_CONFIG_AUX_DIR([build-aux])
 AC_CONFIG_MACRO_DIR([build-aux/m4])
 
-BITCOIN_DAEMON_NAME=yerbasd
-BITCOIN_GUI_NAME=yerbas-qt
-BITCOIN_CLI_NAME=yerbas-cli
-BITCOIN_TX_NAME=yerbas-tx
+BITCOIN_DAEMON_NAME=jagoancoind
+BITCOIN_GUI_NAME=jagoancoin-qt
+BITCOIN_CLI_NAME=jagoancoin-cli
+BITCOIN_TX_NAME=jagoancoin-tx
 
 dnl Unless the user specified ARFLAGS, force it to be cr
 AC_ARG_VAR(ARFLAGS, [Flags for the archiver, defaults to <cr> if not set])
@@ -27,9 +27,9 @@ fi
 
 AC_CANONICAL_HOST
 
-AH_TOP([#ifndef YERBAS_CONFIG_H])
-AH_TOP([#define YERBAS_CONFIG_H])
-AH_BOTTOM([#endif //YERBAS_CONFIG_H])
+AH_TOP([#ifndef JAGOANCOIN_CONFIG_H])
+AH_TOP([#define JAGOANCOIN_CONFIG_H])
+AH_BOTTOM([#endif //JAGOANCOIN_CONFIG_H])
 
 dnl faketime breaks configure and is only needed for make. Disable it here.
 unset FAKETIME
@@ -394,7 +394,7 @@ CPPFLAGS="$CPPFLAGS -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS"
 
 AC_ARG_WITH([utils],
   [AS_HELP_STRING([--with-utils],
-  [build yerbas-cli yerbas-tx (default=yes)])],
+  [build jagoancoin-cli jagoancoin-tx (default=yes)])],
   [build_bitcoin_utils=$withval],
   [build_bitcoin_utils=yes])
 
@@ -406,7 +406,7 @@ AC_ARG_WITH([libs],
 
 AC_ARG_WITH([daemon],
   [AS_HELP_STRING([--with-daemon],
-  [build yerbasd daemon (default=yes)])],
+  [build jagoancoind daemon (default=yes)])],
   [build_bitcoind=$withval],
   [build_bitcoind=yes])
 
@@ -603,7 +603,7 @@ AC_C_BIGENDIAN
 dnl Check for pthread compile/link requirements
 AX_PTHREAD
 
-# The following macro will add the necessary defines to yerbas-config.h, but
+# The following macro will add the necessary defines to jagoancoin-config.h, but
 # they also need to be passed down to any subprojects. Pull the results out of
 # the cache and add them to CPPFLAGS.
 AC_SYS_LARGEFILE
@@ -1140,11 +1140,11 @@ AC_SUBST(UNIVALUE_LIBS)
 
 BITCOIN_QT_PATH_PROGS([PROTOC], [protoc],$protoc_bin_path)
 
-AC_MSG_CHECKING([whether to build yerbasd])
+AC_MSG_CHECKING([whether to build jagoancoind])
 AM_CONDITIONAL([BUILD_BITCOIND], [test x$build_bitcoind = xyes])
 AC_MSG_RESULT($build_bitcoind)
 
-AC_MSG_CHECKING([whether to build utils (yerbas-cli yerbas-tx)])
+AC_MSG_CHECKING([whether to build utils (jagoancoin-cli jagoancoin-tx)])
 AM_CONDITIONAL([BUILD_BITCOIN_UTILS], [test x$build_bitcoin_utils = xyes])
 AC_MSG_RESULT($build_bitcoin_utils)
 
@@ -1152,7 +1152,7 @@ AC_MSG_CHECKING([whether to build libraries])
 AM_CONDITIONAL([BUILD_BITCOIN_LIBS], [test x$build_bitcoin_libs = xyes])
 if test x$build_bitcoin_libs = xyes; then
   AC_DEFINE(HAVE_CONSENSUS_LIB, 1, [Define this symbol if the consensus lib has been built])
-  AC_CONFIG_FILES([libyerbasconsensus.pc:libyerbasconsensus.pc.in])
+  AC_CONFIG_FILES([libjagoancoinconsensus.pc:libjagoancoinconsensus.pc.in])
 fi
 AC_MSG_RESULT($build_bitcoin_libs)
 
@@ -1245,7 +1245,7 @@ if test x$bitcoin_enable_qt != xno; then
     AC_MSG_WARN("xgettext is required to update qt translations")
   fi
 
-  AC_MSG_CHECKING([whether to build test_yerbas-qt])
+  AC_MSG_CHECKING([whether to build test_jagoancoin-qt])
   if test x$use_gui_tests$bitcoin_enable_qt_test = xyesyes; then
     AC_MSG_RESULT([yes])
     BUILD_TEST_QT="yes"
@@ -1256,7 +1256,7 @@ fi
 
 AM_CONDITIONAL([ENABLE_ZMQ], [test "x$use_zmq" = "xyes"])
 
-AC_MSG_CHECKING([whether to build test_yerbas])
+AC_MSG_CHECKING([whether to build test_jagoancoin])
 if test x$use_tests = xyes; then
   AC_MSG_RESULT([yes])
   BUILD_TEST="yes"

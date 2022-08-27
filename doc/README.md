@@ -1,39 +1,39 @@
-Yerbas Core
+Jagoancoin Core
 ==========
 
-This is the official reference wallet for Yerbas digital currency and comprises the backbone of the Yerbas peer-to-peer network. You can [download Yerbas Core](https://www.yerbas.org/downloads/) or [build it yourself](#building) using the guides below.
+This is the official reference wallet for Jagoancoin digital currency and comprises the backbone of the Jagoancoin peer-to-peer network. You can [download Jagoancoin Core](https://www.jagoancoin.org/downloads/) or [build it yourself](#building) using the guides below.
 
 Running
 ---------------------
-The following are some helpful notes on how to run Yerbas on your native platform.
+The following are some helpful notes on how to run Jagoancoin on your native platform.
 
 ### Unix
 
 Unpack the files into a directory and run:
 
-- `bin/yerbas-qt` (GUI) or
-- `bin/yerbasd` (headless)
+- `bin/jagoancoin-qt` (GUI) or
+- `bin/jagoancoind` (headless)
 
 ### Windows
 
-Unpack the files into a directory, and then run yerbas-qt.exe.
+Unpack the files into a directory, and then run jagoancoin-qt.exe.
 
 ### OS X
 
-Drag Yerbas-Qt to your applications folder, and then run Yerbas-Qt.
+Drag Jagoancoin-Qt to your applications folder, and then run Jagoancoin-Qt.
 
 ### Need Help?
 
-* See the [Yerbas documentation](https://docs.yerbas.org)
+* See the [Jagoancoin documentation](https://docs.jagoancoin.org)
 for help and more information.
-* See the [Yerbas Developer Documentation](https://yerbas-docs.github.io/) 
+* See the [Jagoancoin Developer Documentation](https://jagoancoin-docs.github.io/) 
 for technical specifications and implementation details.
-* Ask for help on [Yerbas Nation Discord](http://yerbaschat.org)
-* Ask for help on the [Yerbas Forum](https://yerbas.org/forum)
+* Ask for help on [Jagoancoin Nation Discord](http://jagoancoinchat.org)
+* Ask for help on the [Jagoancoin Forum](https://jagoancoin.org/forum)
 
 Building
 ---------------------
-The following are developer notes on how to build Yerbas Core on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
+The following are developer notes on how to build Jagoancoin Core on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
 
 - [OS X Build Notes](build-osx.md)
 - [Unix Build Notes](build-unix.md)
@@ -43,7 +43,7 @@ The following are developer notes on how to build Yerbas Core on your native pla
 
 Development
 ---------------------
-The Yerbas Core repo's [root README](/README.md) contains relevant information on the development process and automated testing.
+The Jagoancoin Core repo's [root README](/README.md) contains relevant information on the development process and automated testing.
 
 - [Developer Notes](developer-notes.md)
 - [Release Notes](release-notes.md)
@@ -59,8 +59,8 @@ The Yerbas Core repo's [root README](/README.md) contains relevant information o
 - [Benchmarking](benchmarking.md)
 
 ### Resources
-* Discuss on the [Yerbas Forum](https://yerbas.org/forum), in the Development & Technical Discussion board.
-* Discuss on [Yerbas Nation Discord](http://yerbaschat.org)
+* Discuss on the [Jagoancoin Forum](https://jagoancoin.org/forum), in the Development & Technical Discussion board.
+* Discuss on [Jagoancoin Nation Discord](http://jagoancoinchat.org)
 
 ### Miscellaneous
 - [Assets Attribution](assets-attribution.md)

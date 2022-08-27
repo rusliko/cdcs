@@ -1,11 +1,11 @@
 Sample configuration files for:
 ```
-SystemD: yerbasd.service
-Upstart: yerbasd.conf
-OpenRC:  yerbasd.openrc
-         yerbasd.openrcconf
-CentOS:  yerbasd.init
-OS X:    org.yerbas.yerbasd.plist
+SystemD: jagoancoind.service
+Upstart: jagoancoind.conf
+OpenRC:  jagoancoind.openrc
+         jagoancoind.openrcconf
+CentOS:  jagoancoind.init
+OS X:    org.jagoancoin.jagoancoind.plist
 ```
 have been made available to assist packagers in creating node packages here.
 

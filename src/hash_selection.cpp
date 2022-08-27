@@ -1,4 +1,4 @@
-/* Copyright (c) 2020 The Yerbas Core developers
+/* Copyright (c) 2020 The Jagoancoin Core developers
  * Distributed under the MIT software license, see the accompanying
  * file COPYING or http://www.opensource.org/licenses/mit-license.php.
  *

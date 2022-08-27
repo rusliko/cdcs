@@ -33,37 +33,37 @@ Follow the instructions in [build-generic](build-generic.md)
 Running
 -------
 
-Yerbas Core is now available at `./src/yerbasd`
+Jagoancoin Core is now available at `./src/jagoancoind`
 
 Before running, it's recommended you create an RPC configuration file.
 
-    echo -e "rpcuser=yerbasrpc\nrpcpassword=$(xxd -l 16 -p /dev/urandom)" > "/Users/${USER}/Library/Application Support/YerbasCore/yerbas.conf"
+    echo -e "rpcuser=jagoancoinrpc\nrpcpassword=$(xxd -l 16 -p /dev/urandom)" > "/Users/${USER}/Library/Application Support/JagoanCoin/jagoancoin.conf"
 
-    chmod 600 "/Users/${USER}/Library/Application Support/YerbasCore/yerbas.conf"
+    chmod 600 "/Users/${USER}/Library/Application Support/JagoanCoin/jagoancoin.conf"
 
-The first time you run yerbasd, it will start downloading the blockchain. This process could take several hours.
+The first time you run jagoancoind, it will start downloading the blockchain. This process could take several hours.
 
 You can monitor the download process by looking at the debug.log file:
 
-    tail -f $HOME/Library/Application\ Support/YerbasCore/debug.log
+    tail -f $HOME/Library/Application\ Support/JagoanCoin/debug.log
 
 Other commands:
 -------
 
-    ./src/yerbasd -daemon # Starts the yerbas daemon.
-    ./src/yerbas-cli --help # Outputs a list of command-line options.
-    ./src/yerbas-cli help # Outputs a list of RPC commands when the daemon is running.
+    ./src/jagoancoind -daemon # Starts the jagoancoin daemon.
+    ./src/jagoancoin-cli --help # Outputs a list of command-line options.
+    ./src/jagoancoin-cli help # Outputs a list of RPC commands when the daemon is running.
 
 Using Qt Creator as IDE
 ------------------------
-You can use Qt Creator as an IDE, for yerbas development.
+You can use Qt Creator as an IDE, for jagoancoin development.
 Download and install the community edition of [Qt Creator](https://www.qt.io/download/).
 Uncheck everything except Qt Creator during the installation process.
 
 1. Make sure you installed everything through Homebrew mentioned above
 2. Do a proper ./configure --enable-debug
 3. In Qt Creator do "New Project" -> Import Project -> Import Existing Project
-4. Enter "yerbas-qt" as project name, enter src/qt as location
+4. Enter "jagoancoin-qt" as project name, enter src/qt as location
 5. Leave the file selection as it is
 6. Confirm the "summary page"
 7. In the "Projects" tab select "Manage Kits..."

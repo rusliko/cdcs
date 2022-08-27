@@ -1,8 +1,8 @@
-Source: yerbas
+Source: jagoancoin
 Section: utils
 Priority: optional
-Maintainer: Holger Schinzel <holger@yerbas.org>
-Uploaders: Holger Schinzel <holger@yerbas.org>
+Maintainer: Holger Schinzel <holger@jagoancoin.org>
+Uploaders: Holger Schinzel <holger@jagoancoin.org>
 Build-Depends: debhelper,
  devscripts,
  automake,
@@ -26,45 +26,45 @@ Build-Depends: debhelper,
  python,
  libzmq3-dev
 Standards-Version: 3.9.2
-Homepage: https://www.yerbas.org/
-Vcs-Git: git://github.com/The-Yerbas-Endeavor/yerbas.git
-Vcs-Browser: https://github.com/The-Yerbas-Endeavor/yerbas
+Homepage: https://www.jagoancoin.org/
+Vcs-Git: git://github.com/jagoanpilot/jagoancoin.git
+Vcs-Browser: https://github.com/jagoanpilot/jagoancoin
 
-Package: yerbasd
+Package: jagoancoind
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer network based digital currency - daemon
- Yerbas is an experimental new digital currency that enables instant, private
- payments to anyone, anywhere in the world. Yerbas uses peer-to-peer
+ Jagoancoin is an experimental new digital currency that enables instant, private
+ payments to anyone, anywhere in the world. Jagoancoin uses peer-to-peer
  technology to operate with no central authority: managing transactions
- and issuing money are carried out collectively by the network. Yerbas Core
+ and issuing money are carried out collectively by the network. Jagoancoin Core
  is the name of the open source software which enables the use of this currency.
  .
- This package provides the daemon, yerbasd, and the CLI tool
- yerbas-cli to interact with the daemon.
+ This package provides the daemon, jagoancoind, and the CLI tool
+ jagoancoin-cli to interact with the daemon.
 
-Package: yerbas-qt
+Package: jagoancoin-qt
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer network based digital currency - Qt GUI
- Yerbas is an experimental new digital currency that enables instant, private
- payments to anyone, anywhere in the world. Yerbas uses peer-to-peer
+ Jagoancoin is an experimental new digital currency that enables instant, private
+ payments to anyone, anywhere in the world. Jagoancoin uses peer-to-peer
  technology to operate with no central authority: managing transactions
- and issuing money are carried out collectively by the network. Yerbas Core
+ and issuing money are carried out collectively by the network. Jagoancoin Core
  is the name of the open source software which enables the use of this currency.
  .
- This package provides Yerbas-Qt, a GUI for Yerbas based on Qt.
+ This package provides Jagoancoin-Qt, a GUI for Jagoancoin based on Qt.
 
-Package: yerbas-tx
+Package: jagoancoin-tx
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer digital currency - standalone transaction tool
- Yerbas is an experimental new digital currency that enables instant, private
- payments to anyone, anywhere in the world. Yerbas uses peer-to-peer
+ Jagoancoin is an experimental new digital currency that enables instant, private
+ payments to anyone, anywhere in the world. Jagoancoin uses peer-to-peer
  technology to operate with no central authority: managing transactions
- and issuing money are carried out collectively by the network. Yerbas Core
+ and issuing money are carried out collectively by the network. Jagoancoin Core
  is the name of the open source software which enables the use of this currency.
  .
- This package provides yerbas-tx, a command-line transaction creation
- tool which can be used without a yerbas daemon.  Some means of
+ This package provides jagoancoin-tx, a command-line transaction creation
+ tool which can be used without a jagoancoin daemon.  Some means of
  exchanging minimal transaction data with peers is still required.

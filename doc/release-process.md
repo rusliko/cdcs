@@ -1,9 +1,9 @@
 Release Process
 ====================
 
-* Update translations, see [translation_process.md](https://github.com/The-Yerbas-Endeavor/yerbas/blob/master/doc/translation_process.md#synchronising-translations).
+* Update translations, see [translation_process.md](https://github.com/jagoanpilot/jagoancoin/blob/master/doc/translation_process.md#synchronising-translations).
 
-* Update manpages, see [gen-manpages.sh](https://github.com/The-Yerbas-Endeavor/yerbas/blob/master/contrib/devtools/README.md#gen-manpagessh).
+* Update manpages, see [gen-manpages.sh](https://github.com/jagoanpilot/jagoancoin/blob/master/contrib/devtools/README.md#gen-manpagessh).
 
 Before every minor and major release:
 
@@ -19,7 +19,7 @@ Before every minor and major release:
 
 Before every major release:
 
-* Update hardcoded [seeds](/contrib/seeds/README.md). TODO: Give example PR for Yerbas
+* Update hardcoded [seeds](/contrib/seeds/README.md). TODO: Give example PR for Jagoancoin
 * Update [`BLOCK_CHAIN_SIZE`](/src/qt/intro.cpp) to the current size plus some overhead.
 * Update `src/chainparams.cpp` chainTxData with statistics about the transaction count and rate.
 * Update version of `contrib/gitian-descriptors/*.yml`: usually one'd want to do this on master after branching off the release - but be sure to at least do it before a new major release
@@ -31,12 +31,12 @@ If you're using the automated script (found in [contrib/gitian-build.py](/contri
 Check out the source code in the following directory hierarchy.
 
 	cd /path/to/your/toplevel/build
-	git clone https://github.com/The-Yerbas-Endeavor/gitian.sigs.git
-	git clone https://github.com/The-Yerbas-Endeavor/yerbas-detached-sigs.git
+	git clone https://github.com/jagoanpilot/gitian.sigs.git
+	git clone https://github.com/jagoanpilot/jagoancoin-detached-sigs.git
 	git clone https://github.com/devrandom/gitian-builder.git
-	git clone https://github.com/The-Yerbas-Endeavor/yerbas.git
+	git clone https://github.com/jagoanpilot/jagoancoin.git
 
-### Yerbas Core maintainers/release engineers, suggestion for writing release notes
+### Jagoancoin Core maintainers/release engineers, suggestion for writing release notes
 
 Write release notes. git shortlog helps a lot, for example:
 
@@ -56,7 +56,7 @@ If you're using the automated script (found in [contrib/gitian-build.py](/contri
 
 Setup Gitian descriptors:
 
-    pushd ./yerbas
+    pushd ./jagoancoin
     export SIGNER=(your Gitian key, ie bluematt, sipa, etc)
     export VERSION=(new version, e.g. 0.12.3)
     git fetch
@@ -91,7 +91,7 @@ Create the OS X SDK tarball, see the [OS X readme](README_osx.md) for details, a
 By default, Gitian will fetch source files as needed. To cache them ahead of time:
 
     pushd ./gitian-builder
-    make -C ../yerbas/depends download SOURCES_PATH=`pwd`/cache/common
+    make -C ../jagoancoin/depends download SOURCES_PATH=`pwd`/cache/common
     popd
 
 Only missing files will be fetched, so this is safe to re-run for each build.
@@ -99,50 +99,50 @@ Only missing files will be fetched, so this is safe to re-run for each build.
 NOTE: Offline builds must use the --url flag to ensure Gitian fetches only from local URLs. For example:
 
     pushd ./gitian-builder
-    ./bin/gbuild --url yerbas=/path/to/yerbas,signature=/path/to/sigs {rest of arguments}
+    ./bin/gbuild --url jagoancoin=/path/to/jagoancoin,signature=/path/to/sigs {rest of arguments}
     popd
 
 The gbuild invocations below <b>DO NOT DO THIS</b> by default.
 
-### Build and sign Yerbas Core for Linux, Windows, and OS X:
+### Build and sign Jagoancoin Core for Linux, Windows, and OS X:
 
     pushd ./gitian-builder
-    ./bin/gbuild --num-make 2 --memory 3000 --commit yerbas=v${VERSION} ../yerbas/contrib/gitian-descriptors/gitian-linux.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../yerbas/contrib/gitian-descriptors/gitian-linux.yml
-    mv build/out/yerbas-*.tar.gz build/out/src/yerbas-*.tar.gz ../
+    ./bin/gbuild --num-make 2 --memory 3000 --commit jagoancoin=v${VERSION} ../jagoancoin/contrib/gitian-descriptors/gitian-linux.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../jagoancoin/contrib/gitian-descriptors/gitian-linux.yml
+    mv build/out/jagoancoin-*.tar.gz build/out/src/jagoancoin-*.tar.gz ../
 
-    ./bin/gbuild --num-make 2 --memory 3000 --commit yerbas=v${VERSION} ../yerbas/contrib/gitian-descriptors/gitian-win.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-win-unsigned --destination ../gitian.sigs/ ../yerbas/contrib/gitian-descriptors/gitian-win.yml
-    mv build/out/yerbas-*-win-unsigned.tar.gz inputs/yerbas-win-unsigned.tar.gz
-    mv build/out/yerbas-*.zip build/out/yerbas-*.exe ../
+    ./bin/gbuild --num-make 2 --memory 3000 --commit jagoancoin=v${VERSION} ../jagoancoin/contrib/gitian-descriptors/gitian-win.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-win-unsigned --destination ../gitian.sigs/ ../jagoancoin/contrib/gitian-descriptors/gitian-win.yml
+    mv build/out/jagoancoin-*-win-unsigned.tar.gz inputs/jagoancoin-win-unsigned.tar.gz
+    mv build/out/jagoancoin-*.zip build/out/jagoancoin-*.exe ../
 
-    ./bin/gbuild --num-make 2 --memory 3000 --commit yerbas=v${VERSION} ../yerbas/contrib/gitian-descriptors/gitian-osx.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-osx-unsigned --destination ../gitian.sigs/ ../yerbas/contrib/gitian-descriptors/gitian-osx.yml
-    mv build/out/yerbas-*-osx-unsigned.tar.gz inputs/yerbas-osx-unsigned.tar.gz
-    mv build/out/yerbas-*.tar.gz build/out/yerbas-*.dmg ../
+    ./bin/gbuild --num-make 2 --memory 3000 --commit jagoancoin=v${VERSION} ../jagoancoin/contrib/gitian-descriptors/gitian-osx.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-osx-unsigned --destination ../gitian.sigs/ ../jagoancoin/contrib/gitian-descriptors/gitian-osx.yml
+    mv build/out/jagoancoin-*-osx-unsigned.tar.gz inputs/jagoancoin-osx-unsigned.tar.gz
+    mv build/out/jagoancoin-*.tar.gz build/out/jagoancoin-*.dmg ../
     popd
 
 Build output expected:
 
-  1. source tarball (`yerbas-${VERSION}.tar.gz`)
-  2. linux 32-bit and 64-bit dist tarballs (`yerbas-${VERSION}-linux[32|64].tar.gz`)
-  3. windows 32-bit and 64-bit unsigned installers and dist zips (`yerbas-${VERSION}-win[32|64]-setup-unsigned.exe`, `yerbas-${VERSION}-win[32|64].zip`)
-  4. OS X unsigned installer and dist tarball (`yerbas-${VERSION}-osx-unsigned.dmg`, `yerbas-${VERSION}-osx64.tar.gz`)
+  1. source tarball (`jagoancoin-${VERSION}.tar.gz`)
+  2. linux 32-bit and 64-bit dist tarballs (`jagoancoin-${VERSION}-linux[32|64].tar.gz`)
+  3. windows 32-bit and 64-bit unsigned installers and dist zips (`jagoancoin-${VERSION}-win[32|64]-setup-unsigned.exe`, `jagoancoin-${VERSION}-win[32|64].zip`)
+  4. OS X unsigned installer and dist tarball (`jagoancoin-${VERSION}-osx-unsigned.dmg`, `jagoancoin-${VERSION}-osx64.tar.gz`)
   5. Gitian signatures (in `gitian.sigs/${VERSION}-<linux|{win,osx}-unsigned>/(your Gitian key)/`)
 
 ### Verify other gitian builders signatures to your own. (Optional)
 
 Add other gitian builders keys to your gpg keyring, and/or refresh keys.
 
-    gpg --import yerbas/contrib/gitian-keys/*.pgp
+    gpg --import jagoancoin/contrib/gitian-keys/*.pgp
     gpg --refresh-keys
 
 Verify the signatures
 
     pushd ./gitian-builder
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-linux ../yerbas/contrib/gitian-descriptors/gitian-linux.yml
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-unsigned ../yerbas/contrib/gitian-descriptors/gitian-win.yml
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-unsigned ../yerbas/contrib/gitian-descriptors/gitian-osx.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-linux ../jagoancoin/contrib/gitian-descriptors/gitian-linux.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-unsigned ../jagoancoin/contrib/gitian-descriptors/gitian-win.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-unsigned ../jagoancoin/contrib/gitian-descriptors/gitian-osx.yml
     popd
 
 ### Next steps:
@@ -163,22 +163,22 @@ Codesigner only: Create Windows/OS X detached signatures:
 
 Codesigner only: Sign the osx binary:
 
-    transfer yerbascore-osx-unsigned.tar.gz to osx for signing
-    tar xf yerbascore-osx-unsigned.tar.gz
+    transfer jagoancoin-osx-unsigned.tar.gz to osx for signing
+    tar xf jagoancoin-osx-unsigned.tar.gz
     ./detached-sig-create.sh -s "Key ID" -o runtime
     Enter the keychain password and authorize the signature
     Move signature-osx.tar.gz back to the gitian host
 
 Codesigner only: Sign the windows binaries:
 
-    tar xf yerbascore-win-unsigned.tar.gz
+    tar xf jagoancoin-win-unsigned.tar.gz
     ./detached-sig-create.sh -key /path/to/codesign.key
     Enter the passphrase for the key when prompted
     signature-win.tar.gz will be created
 
 Codesigner only: Commit the detached codesign payloads:
 
-    cd ~/yerbascore-detached-sigs
+    cd ~/jagoancoin-detached-sigs
     checkout the appropriate branch for this release series
     rm -rf *
     tar xf signature-osx.tar.gz
@@ -191,25 +191,25 @@ Codesigner only: Commit the detached codesign payloads:
 Non-codesigners: wait for Windows/OS X detached signatures:
 
 - Once the Windows/OS X builds each have 3 matching signatures, they will be signed with their respective release keys.
-- Detached signatures will then be committed to the [yerbas-detached-sigs](https://github.com/The-Yerbas-Endeavor/yerbas-detached-sigs) repository, which can be combined with the unsigned apps to create signed binaries.
+- Detached signatures will then be committed to the [jagoancoin-detached-sigs](https://github.com/jagoanpilot/jagoancoin-detached-sigs) repository, which can be combined with the unsigned apps to create signed binaries.
 
 Create (and optionally verify) the signed OS X binary:
 
     pushd ./gitian-builder
-    ./bin/gbuild -i --commit signature=v${VERSION} ../yerbas/contrib/gitian-descriptors/gitian-osx-signer.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-osx-signed --destination ../gitian.sigs/ ../yerbas/contrib/gitian-descriptors/gitian-osx-signer.yml
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../yerbas/contrib/gitian-descriptors/gitian-osx-signer.yml
-    mv build/out/yerbas-osx-signed.dmg ../yerbas-${VERSION}-osx.dmg
+    ./bin/gbuild -i --commit signature=v${VERSION} ../jagoancoin/contrib/gitian-descriptors/gitian-osx-signer.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-osx-signed --destination ../gitian.sigs/ ../jagoancoin/contrib/gitian-descriptors/gitian-osx-signer.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../jagoancoin/contrib/gitian-descriptors/gitian-osx-signer.yml
+    mv build/out/jagoancoin-osx-signed.dmg ../jagoancoin-${VERSION}-osx.dmg
     popd
 
 Create (and optionally verify) the signed Windows binaries:
 
     pushd ./gitian-builder
-    ./bin/gbuild -i --commit signature=v${VERSION} ../yerbas/contrib/gitian-descriptors/gitian-win-signer.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-win-signed --destination ../gitian.sigs/ ../yerbas/contrib/gitian-descriptors/gitian-win-signer.yml
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-signed ../yerbas/contrib/gitian-descriptors/gitian-win-signer.yml
-    mv build/out/yerbas-*win64-setup.exe ../yerbas-${VERSION}-win64-setup.exe
-    mv build/out/yerbas-*win32-setup.exe ../yerbas-${VERSION}-win32-setup.exe
+    ./bin/gbuild -i --commit signature=v${VERSION} ../jagoancoin/contrib/gitian-descriptors/gitian-win-signer.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-win-signed --destination ../gitian.sigs/ ../jagoancoin/contrib/gitian-descriptors/gitian-win-signer.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-signed ../jagoancoin/contrib/gitian-descriptors/gitian-win-signer.yml
+    mv build/out/jagoancoin-*win64-setup.exe ../jagoancoin-${VERSION}-win64-setup.exe
+    mv build/out/jagoancoin-*win32-setup.exe ../jagoancoin-${VERSION}-win32-setup.exe
     popd
 
 Commit your signature for the signed OS X/Windows binaries:
@@ -231,23 +231,23 @@ sha256sum * > SHA256SUMS
 
 The list of files should be:
 ```
-yerbas-${VERSION}-aarch64-linux-gnu.tar.gz
-yerbas-${VERSION}-arm-linux-gnueabihf.tar.gz
-yerbas-${VERSION}-i686-pc-linux-gnu.tar.gz
-yerbas-${VERSION}-x86_64-linux-gnu.tar.gz
-yerbas-${VERSION}-osx64.tar.gz
-yerbas-${VERSION}-osx.dmg
-yerbas-${VERSION}.tar.gz
-yerbas-${VERSION}-win32-setup.exe
-yerbas-${VERSION}-win32.zip
-yerbas-${VERSION}-win64-setup.exe
-yerbas-${VERSION}-win64.zip
+jagoancoin-${VERSION}-aarch64-linux-gnu.tar.gz
+jagoancoin-${VERSION}-arm-linux-gnueabihf.tar.gz
+jagoancoin-${VERSION}-i686-pc-linux-gnu.tar.gz
+jagoancoin-${VERSION}-x86_64-linux-gnu.tar.gz
+jagoancoin-${VERSION}-osx64.tar.gz
+jagoancoin-${VERSION}-osx.dmg
+jagoancoin-${VERSION}.tar.gz
+jagoancoin-${VERSION}-win32-setup.exe
+jagoancoin-${VERSION}-win32.zip
+jagoancoin-${VERSION}-win64-setup.exe
+jagoancoin-${VERSION}-win64.zip
 ```
 The `*-debug*` files generated by the gitian build contain debug symbols
 for troubleshooting by developers. It is assumed that anyone that is interested
 in debugging can run gitian to generate the files for themselves. To avoid
 end-user confusion about which file to pick, as well as save storage
-space *do not upload these to the yerbas.org server*.
+space *do not upload these to the jagoancoin.org server*.
 
 - GPG-sign it, delete the unsigned file:
 ```
@@ -257,20 +257,20 @@ rm SHA256SUMS
 (the digest algorithm is forced to sha256 to avoid confusion of the `Hash:` header that GPG adds with the SHA256 used for the files)
 Note: check that SHA256SUMS itself doesn't end up in SHA256SUMS, which is a spurious/nonsensical entry.
 
-- Upload zips and installers, as well as `SHA256SUMS.asc` from last step, to the yerbas.org server
+- Upload zips and installers, as well as `SHA256SUMS.asc` from last step, to the jagoancoin.org server
 
-- Update yerbas.org
+- Update jagoancoin.org
 
 - Announce the release:
 
-  - Release on Yerbas forum: https://www.yerbas.org/forum/topic/official-announcements.54/
+  - Release on Jagoancoin forum: https://www.jagoancoin.org/forum/topic/official-announcements.54/
 
-  - Optionally Discord, twitter, reddit /r/Yerbas, ... but this will usually sort out itself
+  - Optionally Discord, twitter, reddit /r/Jagoancoin, ... but this will usually sort out itself
 
-  - Notify flare so that he can start building [the PPAs](https://launchpad.net/~yerbas.org/+archive/ubuntu/yerbas)
+  - Notify flare so that he can start building [the PPAs](https://launchpad.net/~jagoancoin.org/+archive/ubuntu/jagoancoin)
 
   - Archive release notes for the new version to `doc/release-notes/` (branch `master` and branch of the release)
 
-  - Create a [new GitHub release](https://github.com/The-Yerbas-Endeavor/yerbas/releases/new) with a link to the archived release notes.
+  - Create a [new GitHub release](https://github.com/jagoanpilot/jagoancoin/releases/new) with a link to the archived release notes.
 
   - Celebrate

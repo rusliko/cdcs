@@ -1,11 +1,11 @@
 // Copyright (c) 2019 The Dash Core developers
-// Copyright (c) 2020 The Yerbas developers
+// Copyright (c) 2020 The Jagoancoin developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include "bls/bls.h"
 #include "bls/bls_batchverifier.h"
-#include "test/test_yerbas.h"
+#include "test/test_jagoancoin.h"
 
 #include <boost/test/unit_test.hpp>
 

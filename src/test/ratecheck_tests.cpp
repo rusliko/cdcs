@@ -1,9 +1,9 @@
 // Copyright (c) 2014-2019 The Dash Core developers
-// Copyright (c) 2020 The Yerbas developers
+// Copyright (c) 2020 The Jagoancoin developers
 
 #include "governance/governance.h"
 
-#include "test/test_yerbas.h"
+#include "test/test_jagoancoin.h"
 
 #include <boost/test/unit_test.hpp>
 

@@ -1,5 +1,5 @@
 // Copyright (c) 2014-2020 The Dash Core developers
-// Copyright (c) 2020 The Yerbas developers
+// Copyright (c) 2020 The Jagoancoin developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -326,8 +326,8 @@ void CPrivateSend::InitStandardDenominations()
         is convertible to another.
 
         For example:
-        100YERB+1000 == (10YERB+100)*10
-        10RM+10000 == (1YERB+1000)*10
+        100JGC+1000 == (10JGC+100)*10
+        10RM+10000 == (1JGC+1000)*10
     */
     /* Disabled
     vecStandardDenominations.push_back( (100      * COIN)+100000 );
@@ -477,10 +477,10 @@ int CPrivateSend::GetDenominations(const std::vector<CTxOut>& vecTxOut, bool fSi
 bool CPrivateSend::GetDenominationsBits(int nDenom, std::vector<int>& vecBitsRet)
 {
     // ( bit on if present, 4 denominations example )
-    // bit 0 - 100YERBAS+1
-    // bit 1 - 10YERBAS+1
-    // bit 2 - 1YERBAS+1
-    // bit 3 - .1YERBAS+1
+    // bit 0 - 100JAGOANCOIN+1
+    // bit 1 - 10JAGOANCOIN+1
+    // bit 2 - 1JAGOANCOIN+1
+    // bit 3 - .1JAGOANCOIN+1
 
     int nMaxDenoms = vecStandardDenominations.size();
 

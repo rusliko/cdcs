@@ -137,7 +137,7 @@ public:
 };
 
 /**
- * Yerbas RPC command dispatcher.
+ * Jagoancoin RPC command dispatcher.
  */
 class CRPCTable
 {

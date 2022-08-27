@@ -1,10 +1,10 @@
 // Copyright (c) 2018-2020 The Dash Core developers
-// Copyright (c) 2020 The Yerbas developers
+// Copyright (c) 2020 The Jagoancoin developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef YERBAS_QUORUMS_SIGNING_H
-#define YERBAS_QUORUMS_SIGNING_H
+#ifndef JAGOANCOIN_QUORUMS_SIGNING_H
+#define JAGOANCOIN_QUORUMS_SIGNING_H
 
 #include "llmq/quorums.h"
 
@@ -192,4 +192,4 @@ extern CSigningManager* quorumSigningManager;
 
 } // namespace llmq
 
-#endif //YERBAS_QUORUMS_SIGNING_H
+#endif //JAGOANCOIN_QUORUMS_SIGNING_H

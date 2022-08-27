@@ -16,9 +16,9 @@ RUN apt-get update && apt-get install -y python3-pip
 RUN pip3 install pyzmq # really needed?
 RUN pip3 install jinja2
 
-# yerbas_hash
-RUN git clone https://github.com/The-Yerbas-Endeavor/yerbas_hash
-RUN cd yerbas_hash && python3 setup.py install
+# jagoancoin_hash
+RUN git clone https://github.com/jagoanpilot/jagoancoin_hash
+RUN cd jagoancoin_hash && python3 setup.py install
 
 ARG USER_ID=1000
 ARG GROUP_ID=1000
@@ -26,8 +26,8 @@ ARG GROUP_ID=1000
 # add user with specified (or default) user/group ids
 ENV USER_ID ${USER_ID}
 ENV GROUP_ID ${GROUP_ID}
-RUN groupadd -g ${GROUP_ID} yerbas
-RUN useradd -u ${USER_ID} -g yerbas -s /bin/bash -m -d /yerbas yerbas
+RUN groupadd -g ${GROUP_ID} jagoancoin
+RUN useradd -u ${USER_ID} -g jagoancoin -s /bin/bash -m -d /jagoancoin jagoancoin
 
 # Extra packages
 ARG BUILD_TARGET=linux64
@@ -45,13 +45,13 @@ RUN \
   update-alternatives --set x86_64-w64-mingw32-g++  /usr/bin/x86_64-w64-mingw32-g++-posix; \
   exit 0
 
-RUN mkdir /yerbas-src && \
+RUN mkdir /jagoancoin-src && \
   mkdir -p /cache/ccache && \
   mkdir /cache/depends && \
   mkdir /cache/sdk-sources && \
-  chown $USER_ID:$GROUP_ID /yerbas-src && \
+  chown $USER_ID:$GROUP_ID /jagoancoin-src && \
   chown $USER_ID:$GROUP_ID /cache && \
   chown $USER_ID:$GROUP_ID /cache -R
-WORKDIR /yerbas-src
+WORKDIR /jagoancoin-src
 
-USER yerbas
+USER jagoancoin

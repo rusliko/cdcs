@@ -1,15 +1,15 @@
 [Unit]
-Description=Yerbas's distributed currency daemon
+Description=Jagoancoin's distributed currency daemon
 After=network.target
 
 [Service]
-User=yerbascore
-Group=yerbascore
+User=jagoancoin
+Group=jagoancoin
 
 Type=forking
-PIDFile=/var/lib/yerbasd/yerbasd.pid
-ExecStart=/usr/bin/yerbasd -daemon -pid=/var/lib/yerbasd/yerbasd.pid \
--conf=/etc/yerbascore/yerbas.conf -datadir=/var/lib/yerbasd -disablewallet
+PIDFile=/var/lib/jagoancoind/jagoancoind.pid
+ExecStart=/usr/bin/jagoancoind -daemon -pid=/var/lib/jagoancoind/jagoancoind.pid \
+-conf=/etc/jagoancoin/jagoancoin.conf -datadir=/var/lib/jagoancoind -disablewallet
 
 Restart=always
 PrivateTmp=true

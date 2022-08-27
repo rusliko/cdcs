@@ -1,7 +1,7 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2015 The Bitcoin Core developers
 // Copyright (c) 2014-2019 The Dash Core developers
-// Copyright (c) 2020 The Yerbas developers
+// Copyright (c) 2020 The Jagoancoin developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -13,7 +13,7 @@
 #define BITCOIN_UTIL_H
 
 #if defined(HAVE_CONFIG_H)
-#include "config/yerbas-config.h"
+#include "config/jagoancoin-config.h"
 #endif
 
 #include "compat.h"
@@ -37,14 +37,14 @@
 
 // Uncomment the following line to enable debugging messages
 // or enable on a per file basis prior to inclusion of util.h
-//#define ENABLE_YERBAS_DEBUG
-#ifdef ENABLE_YERBAS_DEBUG
+//#define ENABLE_JAGOANCOIN_DEBUG
+#ifdef ENABLE_JAGOANCOIN_DEBUG
 #define DBG( x ) x
 #else
 #define DBG( x )
 #endif
 
-//Yerbas only features
+//Jagoancoin only features
 
 extern bool fSmartnodeMode;
 extern bool fLiteMode;
@@ -127,7 +127,7 @@ namespace BCLog {
         QT          = (1 << 19),
         LEVELDB     = (1 << 20),
 
-        //Start Yerbas
+        //Start Jagoancoin
         CHAINLOCKS  = ((uint64_t)1 << 32),
         GOBJECT     = ((uint64_t)1 << 33),
         INSTANTSEND = ((uint64_t)1 << 34),
@@ -139,7 +139,7 @@ namespace BCLog {
         MNSYNC      = ((uint64_t)1 << 40),
         PRIVATESEND = ((uint64_t)1 << 41),
         SPORK       = ((uint64_t)1 << 42),
-        //End Yerbas
+        //End Jagoancoin
 
         ALL         = ~(uint64_t)0,
     };
@@ -358,7 +358,7 @@ void RenameThreadPool(ctpl::thread_pool& tp, const char* baseName);
  */
 template <typename Callable> void TraceThread(const char* name,  Callable func)
 {
-    std::string s = strprintf("yerbas-%s", name);
+    std::string s = strprintf("jagoancoin-%s", name);
     RenameThread(s.c_str());
     try
     {

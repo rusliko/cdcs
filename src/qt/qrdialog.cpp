@@ -22,7 +22,7 @@
 #endif
 
 #if defined(HAVE_CONFIG_H)
-#include "config/yerbas-config.h" /* for USE_QRCODE */
+#include "config/jagoancoin-config.h" /* for USE_QRCODE */
 #endif
 
 #ifdef USE_QRCODE

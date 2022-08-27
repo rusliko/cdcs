@@ -70,12 +70,12 @@
         <translation>Direcciones de recepción</translation>
     </message>
     <message>
-        <source>These are your Yerbas addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Estas son sus direcciones Yerbas para enviar pagos. Compruebe siempre la cantidad y la dirección receptora antes de enviar monedas.</translation>
+        <source>These are your Jagoancoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Estas son sus direcciones Jagoancoin para enviar pagos. Compruebe siempre la cantidad y la dirección receptora antes de enviar monedas.</translation>
     </message>
     <message>
-        <source>These are your Yerbas addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Estas son sus direcciones de Yerbas para recibir pagos. Se recomienda utilizar una nueva dirección de recepción para cada transacción.</translation>
+        <source>These are your Jagoancoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Estas son sus direcciones de Jagoancoin para recibir pagos. Se recomienda utilizar una nueva dirección de recepción para cada transacción.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -188,8 +188,8 @@
         <translation>Confirmar cifrado de la billetera</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR YERB&lt;/b&gt;!</source>
-        <translation>Advertencia: Si cifra su billetera y pierde su contraseña, ¡&lt;b&gt;PERDERÁ TODOS SUS YERB&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR JGC&lt;/b&gt;!</source>
+        <translation>Advertencia: Si cifra su billetera y pierde su contraseña, ¡&lt;b&gt;PERDERÁ TODOS SUS JGC&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -258,12 +258,12 @@
 <context>
     <name>BitcoinGUI</name>
     <message>
-        <source>A fatal error occurred. Yerbas Core can no longer continue safely and will quit.</source>
-        <translation>Se produjo un error fatal. Yerbas Core no puede continuar de forma segura y se cerrará.</translation>
+        <source>A fatal error occurred. Jagoancoin Core can no longer continue safely and will quit.</source>
+        <translation>Se produjo un error fatal. Jagoancoin Core no puede continuar de forma segura y se cerrará.</translation>
     </message>
     <message>
-        <source>Yerbas Core</source>
-        <translation>Yerbas Core</translation>
+        <source>Jagoancoin Core</source>
+        <translation>Jagoancoin Core</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -286,16 +286,16 @@
         <translation>&amp;Enviar</translation>
     </message>
     <message>
-        <source>Send coins to a Yerbas address</source>
-        <translation>Enviar monedas a una dirección Yerbas</translation>
+        <source>Send coins to a Jagoancoin address</source>
+        <translation>Enviar monedas a una dirección Jagoancoin</translation>
     </message>
     <message>
         <source>&amp;Receive</source>
         <translation>&amp;Recibir</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and yerbas: URIs)</source>
-        <translation>Solicitar pagos (genera códigos QR y URIs de Yerbas)</translation>
+        <source>Request payments (generates QR codes and jagoancoin: URIs)</source>
+        <translation>Solicitar pagos (genera códigos QR y URIs de Jagoancoin)</translation>
     </message>
     <message>
         <source>&amp;Transactions</source>
@@ -322,8 +322,8 @@
         <translation>Salir de la aplicación</translation>
     </message>
     <message>
-        <source>Show information about Yerbas Core</source>
-        <translation>Mostrar información acerca de Yerbas Core</translation>
+        <source>Show information about Jagoancoin Core</source>
+        <translation>Mostrar información acerca de Jagoancoin Core</translation>
     </message>
     <message>
         <source>About &amp;Qt</source>
@@ -394,16 +394,16 @@
         <translation>Firmar &amp;mensaje...</translation>
     </message>
     <message>
-        <source>Sign messages with your Yerbas addresses to prove you own them</source>
-        <translation>Firmar mensajes con sus direcciones Yerbas para demostrar que le pertenecen</translation>
+        <source>Sign messages with your Jagoancoin addresses to prove you own them</source>
+        <translation>Firmar mensajes con sus direcciones Jagoancoin para demostrar que le pertenecen</translation>
     </message>
     <message>
         <source>&amp;Verify message...</source>
         <translation>&amp;Verificar mensaje...</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Yerbas addresses</source>
-        <translation>Verificar mensajes para comprobar que fueron firmados con la dirección Yerbas indicada</translation>
+        <source>Verify messages to ensure they were signed with specified Jagoancoin addresses</source>
+        <translation>Verificar mensajes para comprobar que fueron firmados con la dirección Jagoancoin indicada</translation>
     </message>
     <message>
         <source>&amp;Information</source>
@@ -482,16 +482,16 @@
         <translation>Abrir &amp;URI...</translation>
     </message>
     <message>
-        <source>Open a yerbas: URI or payment request</source>
-        <translation>Abrir un yerbas: URI o petición de pago</translation>
+        <source>Open a jagoancoin: URI or payment request</source>
+        <translation>Abrir un jagoancoin: URI o petición de pago</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
         <translation>&amp;Opciones de consola de comandos</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible Yerbas command-line options</source>
-        <translation>Mostrar el %1 mensaje de ayuda para obtener una lista de las posibles opciones de linea de comandos de Yerbas</translation>
+        <source>Show the %1 help message to get a list with possible Jagoancoin command-line options</source>
+        <translation>Mostrar el %1 mensaje de ayuda para obtener una lista de las posibles opciones de linea de comandos de Jagoancoin</translation>
     </message>
     <message>
         <source>%1 client</source>
@@ -526,8 +526,8 @@
         <translation>Barra de pestañas</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Yerbas network</source>
-        <translation><numerusform>%n conexion(es) activa a la red Yerbas</numerusform><numerusform>%n conexion(es) activas a la red Yerbas</numerusform></translation>
+        <source>%n active connection(s) to Jagoancoin network</source>
+        <translation><numerusform>%n conexion(es) activa a la red Jagoancoin</numerusform><numerusform>%n conexion(es) activas a la red Jagoancoin</numerusform></translation>
     </message>
     <message>
         <source>Network activity disabled</source>
@@ -894,8 +894,8 @@
         <translation>Editar dirección de envío</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Yerbas address.</source>
-        <translation>La dirección introducida "%1" no es una dirección Yerbas válida.</translation>
+        <source>The entered address "%1" is not a valid Jagoancoin address.</source>
+        <translation>La dirección introducida "%1" no es una dirección Jagoancoin válida.</translation>
     </message>
     <message>
         <source>The entered address "%1" is already in the address book.</source>
@@ -992,8 +992,8 @@
         <translation>Información de PrivateSend</translation>
     </message>
     <message>
-        <source>&lt;h3&gt;PrivateSend Basics&lt;/h3&gt; PrivateSend gives you true financial privacy by obscuring the origins of your funds. All the Yerbas in your wallet is comprised of different "inputs" which you can think of as separate, discrete coins.&lt;br&gt; PrivateSend uses an innovative process to mix your inputs with the inputs of two other people, without having your coins ever leave your wallet. You retain control of your money at all times.&lt;hr&gt; &lt;b&gt;The PrivateSend process works like this:&lt;/b&gt;&lt;ol type="1"&gt; &lt;li&gt;PrivateSend begins by breaking your transaction inputs down into standard denominations. These denominations are 0.001 YERB, 0.01 YERB, 0.1 YERB, 1 YERB and 10 YERB -- sort of like the paper money you use every day.&lt;/li&gt; &lt;li&gt;Your wallet then sends requests to specially configured software nodes on the network, called "smartnodes." These smartnodes are informed then that you are interested in mixing a certain denomination. No identifiable information is sent to the smartnodes, so they never know "who" you are.&lt;/li&gt; &lt;li&gt;When two other people send similar messages, indicating that they wish to mix the same denomination, a mixing session begins. The smartnode mixes up the inputs and instructs all three users' wallets to pay the now-transformed input back to themselves. Your wallet pays that denomination directly to itself, but in a different address (called a change address).&lt;/li&gt; &lt;li&gt;In order to fully obscure your funds, your wallet must repeat this process a number of times with each denomination. Each time the process is completed, it's called a "round." Each round of PrivateSend makes it exponentially more difficult to determine where your funds originated.&lt;/li&gt; &lt;li&gt;This mixing process happens in the background without any intervention on your part. When you wish to make a transaction, your funds will already be mixed. No additional waiting is required.&lt;/li&gt; &lt;/ol&gt; &lt;hr&gt;&lt;b&gt;IMPORTANT:&lt;/b&gt; Your wallet only contains 1000 of these "change addresses." Every time a mixing event happens, up to 9 of your addresses are used up. This means those 1000 addresses last for about 100 mixing events. When 900 of them are used, your wallet must create more addresses. It can only do this, however, if you have automatic backups enabled.&lt;br&gt; Consequently, users who have backups disabled will also have PrivateSend disabled. &lt;hr&gt;For more information, see the &lt;a href="https://docs.yerbas.org/en/stable/wallets/yerbascore/privatesend-instantsend.html"&gt;PrivateSend documentation&lt;/a&gt;.</source>
-        <translation>&lt;h3&gt;Conceptos básico de PrivateSend&lt;/h3&gt;PrivateSend te da verdadera privacidad financiera al ocultar los orígenes de tus fondos. Todos los Yerbas en tu billetera están compuestos por diferentes "entradas" en las que puedes pensar como monedas separadas discretas.&lt;br&gt;PrivateSend utiliza un proceso innovador que mezcla tus entradas con las entradas de otras dos personas, sin que tus monedas salgan de la billetera. Tu retienes el control de tu dinero en todo momento.&lt;hr&gt;&lt;b&gt;El proceso de PrivateSend funciona así:&lt;/b&gt;&lt;ol type="1"&gt;&lt;li&gt;PrivateSend comienza dividiendo las entradas de tus transacciones en denominaciones estándares. Éstas denominaciones son 0.001 YERB, 0.01 YERB, 0.1 YERB, 1 YERB y 10 YERB - algo así como el papel moneda que usas todos los días.&lt;/li&gt;&lt;li&gt;Entonces, tu billetera envía solicitudes a nodos de software especialmente configurados en la red, llamados "smartnodes". Estos smartnodes son informados que estás interesado en mezclar una cierta denominación. Información no identificable es enviada a los smartnodes, por lo que nunca saben "quién" eres tu.&lt;/li&gt;&lt;li&gt;Cuando otras dos personas envían mensajes similares, indicando que desean mezclar la misma denominación, comienza una sesión de mezclado. El smartnode mezcla loas entradas e instruye a las billeteras de los tres usuarios para que paguen la entrada ahora transformada a si mismos. Tu billetera paga esa denominación directamente a sí misma, pero en una dirección diferente (llamada dirección de cambio).&lt;/li&gt; &lt;li&gt;En orden de ocultar totalmente tus fondos, st billetera debe repetir este proceso varias veces con cada denominación. Cada vez que se completa el proceso, se denomina una "ronda". Cada ronda de PrivateSend hace que sea exponencialmente más difícil determinar de dónde provienen los fondos.&lt;/li&gt;&lt;li&gt;Este proceso de mezclado ocurre en segundo plano sin ninguna intervención de tu parte. Cuando desees realizar una transacción, tus fondos ya serán anónimos. No se requiere tiempo de espera adicional.&lt;/li&gt;&lt;/ol&gt;&lt;hr&gt;&lt;b&gt;IMPORTATE:&lt;/b&gt;Tu billetera solo contiene 1000 de estas "direcciones de cambio". Cada vez que ocurre un evento de mezclado, hasta 9 de tus direcciones son usadas. Esto significa que esas 1000 direcciones duran alrededor de 100 eventos de mezclado. Cuando 900 de ellas sean usadas, tu billetera debe crear más direcciones. Sin embargo, solo podrá hacer esto si tiene las copias de seguridad automáticas habilitadas.&lt;br&gt;En consecuencia, los usuarios que tengan las copias de seguridad deshabilitadas también tendrán PrivateSend deshabilitado.&lt;hr&gt;Para mas información, consulta la &lt;a href="https://docs.yerbas.org/en/stable/wallets/yerbascore/privatesend-instantsend.html"&gt;documentación de PrivateSend&lt;/a&gt;.</translation>
+        <source>&lt;h3&gt;PrivateSend Basics&lt;/h3&gt; PrivateSend gives you true financial privacy by obscuring the origins of your funds. All the Jagoancoin in your wallet is comprised of different "inputs" which you can think of as separate, discrete coins.&lt;br&gt; PrivateSend uses an innovative process to mix your inputs with the inputs of two other people, without having your coins ever leave your wallet. You retain control of your money at all times.&lt;hr&gt; &lt;b&gt;The PrivateSend process works like this:&lt;/b&gt;&lt;ol type="1"&gt; &lt;li&gt;PrivateSend begins by breaking your transaction inputs down into standard denominations. These denominations are 0.001 JGC, 0.01 JGC, 0.1 JGC, 1 JGC and 10 JGC -- sort of like the paper money you use every day.&lt;/li&gt; &lt;li&gt;Your wallet then sends requests to specially configured software nodes on the network, called "smartnodes." These smartnodes are informed then that you are interested in mixing a certain denomination. No identifiable information is sent to the smartnodes, so they never know "who" you are.&lt;/li&gt; &lt;li&gt;When two other people send similar messages, indicating that they wish to mix the same denomination, a mixing session begins. The smartnode mixes up the inputs and instructs all three users' wallets to pay the now-transformed input back to themselves. Your wallet pays that denomination directly to itself, but in a different address (called a change address).&lt;/li&gt; &lt;li&gt;In order to fully obscure your funds, your wallet must repeat this process a number of times with each denomination. Each time the process is completed, it's called a "round." Each round of PrivateSend makes it exponentially more difficult to determine where your funds originated.&lt;/li&gt; &lt;li&gt;This mixing process happens in the background without any intervention on your part. When you wish to make a transaction, your funds will already be mixed. No additional waiting is required.&lt;/li&gt; &lt;/ol&gt; &lt;hr&gt;&lt;b&gt;IMPORTANT:&lt;/b&gt; Your wallet only contains 1000 of these "change addresses." Every time a mixing event happens, up to 9 of your addresses are used up. This means those 1000 addresses last for about 100 mixing events. When 900 of them are used, your wallet must create more addresses. It can only do this, however, if you have automatic backups enabled.&lt;br&gt; Consequently, users who have backups disabled will also have PrivateSend disabled. &lt;hr&gt;For more information, see the &lt;a href="https://docs.jagoancoin.org/en/stable/wallets/jagoancoin/privatesend-instantsend.html"&gt;PrivateSend documentation&lt;/a&gt;.</source>
+        <translation>&lt;h3&gt;Conceptos básico de PrivateSend&lt;/h3&gt;PrivateSend te da verdadera privacidad financiera al ocultar los orígenes de tus fondos. Todos los Jagoancoin en tu billetera están compuestos por diferentes "entradas" en las que puedes pensar como monedas separadas discretas.&lt;br&gt;PrivateSend utiliza un proceso innovador que mezcla tus entradas con las entradas de otras dos personas, sin que tus monedas salgan de la billetera. Tu retienes el control de tu dinero en todo momento.&lt;hr&gt;&lt;b&gt;El proceso de PrivateSend funciona así:&lt;/b&gt;&lt;ol type="1"&gt;&lt;li&gt;PrivateSend comienza dividiendo las entradas de tus transacciones en denominaciones estándares. Éstas denominaciones son 0.001 JGC, 0.01 JGC, 0.1 JGC, 1 JGC y 10 JGC - algo así como el papel moneda que usas todos los días.&lt;/li&gt;&lt;li&gt;Entonces, tu billetera envía solicitudes a nodos de software especialmente configurados en la red, llamados "smartnodes". Estos smartnodes son informados que estás interesado en mezclar una cierta denominación. Información no identificable es enviada a los smartnodes, por lo que nunca saben "quién" eres tu.&lt;/li&gt;&lt;li&gt;Cuando otras dos personas envían mensajes similares, indicando que desean mezclar la misma denominación, comienza una sesión de mezclado. El smartnode mezcla loas entradas e instruye a las billeteras de los tres usuarios para que paguen la entrada ahora transformada a si mismos. Tu billetera paga esa denominación directamente a sí misma, pero en una dirección diferente (llamada dirección de cambio).&lt;/li&gt; &lt;li&gt;En orden de ocultar totalmente tus fondos, st billetera debe repetir este proceso varias veces con cada denominación. Cada vez que se completa el proceso, se denomina una "ronda". Cada ronda de PrivateSend hace que sea exponencialmente más difícil determinar de dónde provienen los fondos.&lt;/li&gt;&lt;li&gt;Este proceso de mezclado ocurre en segundo plano sin ninguna intervención de tu parte. Cuando desees realizar una transacción, tus fondos ya serán anónimos. No se requiere tiempo de espera adicional.&lt;/li&gt;&lt;/ol&gt;&lt;hr&gt;&lt;b&gt;IMPORTATE:&lt;/b&gt;Tu billetera solo contiene 1000 de estas "direcciones de cambio". Cada vez que ocurre un evento de mezclado, hasta 9 de tus direcciones son usadas. Esto significa que esas 1000 direcciones duran alrededor de 100 eventos de mezclado. Cuando 900 de ellas sean usadas, tu billetera debe crear más direcciones. Sin embargo, solo podrá hacer esto si tiene las copias de seguridad automáticas habilitadas.&lt;br&gt;En consecuencia, los usuarios que tengan las copias de seguridad deshabilitadas también tendrán PrivateSend deshabilitado.&lt;hr&gt;Para mas información, consulta la &lt;a href="https://docs.jagoancoin.org/en/stable/wallets/jagoancoin/privatesend-instantsend.html"&gt;documentación de PrivateSend&lt;/a&gt;.</translation>
     </message>
 </context>
 <context>
@@ -1039,8 +1039,8 @@
         <translation>Se almacenará aproximadamente %1 GB de datos en este directorio.</translation>
     </message>
     <message>
-        <source>%1 will download and store a copy of the Yerbas block chain.</source>
-        <translation>%1 descargará y almacenará una copia de la cadena de bloques de Yerbas.</translation>
+        <source>%1 will download and store a copy of the Jagoancoin block chain.</source>
+        <translation>%1 descargará y almacenará una copia de la cadena de bloques de Jagoancoin.</translation>
     </message>
     <message>
         <source>The wallet will also be stored in this directory.</source>
@@ -1185,12 +1185,12 @@
         <translation>Formulario</translation>
     </message>
     <message>
-        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the Yerbas network, as detailed below.</source>
-        <translation>Es posible que las transacciones recientes aún no estén visibles y, por lo tanto, el saldo de su billetera podría ser incorrecto. Esta información será corregida una vez que su billetera haya terminado de sincronizarse con la red de Yerbas, como se detalla a continuación.</translation>
+        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the Jagoancoin network, as detailed below.</source>
+        <translation>Es posible que las transacciones recientes aún no estén visibles y, por lo tanto, el saldo de su billetera podría ser incorrecto. Esta información será corregida una vez que su billetera haya terminado de sincronizarse con la red de Jagoancoin, como se detalla a continuación.</translation>
     </message>
     <message>
-        <source>Attempting to spend Yerbas that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
-        <translation>La red no aceptará intentos de gastar Yerbas que estén afectados por transacciones aún no reflejadas.</translation>
+        <source>Attempting to spend Jagoancoin that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
+        <translation>La red no aceptará intentos de gastar Jagoancoin que estén afectados por transacciones aún no reflejadas.</translation>
     </message>
     <message>
         <source>Number of blocks left</source>
@@ -1331,12 +1331,12 @@
         <translation>Saldo objetivo de PrivateSend</translation>
     </message>
     <message>
-        <source>Automatically open the Yerbas Core client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Abrir automáticamente el puerto del cliente Yerbas Core en el enrutador. Esto solo funciona cuando su enrutador admite UPnP y está habilitado.</translation>
+        <source>Automatically open the Jagoancoin Core client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Abrir automáticamente el puerto del cliente Jagoancoin Core en el enrutador. Esto solo funciona cuando su enrutador admite UPnP y está habilitado.</translation>
     </message>
     <message>
-        <source>Connect to the Yerbas network through a SOCKS5 proxy.</source>
-        <translation>Conectarse a la red Yerbas a través de un proxy SOCKS5.</translation>
+        <source>Connect to the Jagoancoin network through a SOCKS5 proxy.</source>
+        <translation>Conectarse a la red Jagoancoin a través de un proxy SOCKS5.</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
@@ -1439,8 +1439,8 @@
         <translation>Tor</translation>
     </message>
     <message>
-        <source>Connect to the Yerbas network through a separate SOCKS5 proxy for Tor hidden services.</source>
-        <translation>Conectarse a la red Yerbas a través de un proxy SOCKS5 separado para los servicios Tor ocultos.</translation>
+        <source>Connect to the Jagoancoin network through a separate SOCKS5 proxy for Tor hidden services.</source>
+        <translation>Conectarse a la red Jagoancoin a través de un proxy SOCKS5 separado para los servicios Tor ocultos.</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services:</source>
@@ -1484,9 +1484,9 @@
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/projects/p/yerbas/</source>
+https://www.transifex.com/projects/p/jagoancoin/</source>
         <translation>¿Idioma no disponible o traducción incompleta? Contribuye a la traducción aquí:
-https://www.transifex.com/projects/p/yerbas/</translation>
+https://www.transifex.com/projects/p/jagoancoin/</translation>
     </message>
     <message>
         <source>User Interface Theme:</source>
@@ -1498,7 +1498,7 @@ https://www.transifex.com/projects/p/yerbas/</translation>
     </message>
     <message>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
-        <translation>Elegir la subdivisión predeterminada para mostrar las cuantías en la interfaz y cuando se envían yerbass.</translation>
+        <translation>Elegir la subdivisión predeterminada para mostrar las cuantías en la interfaz y cuando se envían jagoancoins.</translation>
     </message>
     <message>
         <source>Decimal digits</source>
@@ -1564,8 +1564,8 @@ https://www.transifex.com/projects/p/yerbas/</translation>
         <translation>Formulario</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Yerbas network after a connection is established, but this process has not completed yet.</source>
-        <translation>La información mostrada puede estar desactualizada. Su billetera se sincroniza automáticamente con la red Yerbas después de que se haya establecido una conexión, pero este proceso aún no se ha completado.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Jagoancoin network after a connection is established, but this process has not completed yet.</source>
+        <translation>La información mostrada puede estar desactualizada. Su billetera se sincroniza automáticamente con la red Jagoancoin después de que se haya establecido una conexión, pero este proceso aún no se ha completado.</translation>
     </message>
     <message>
         <source>Available:</source>
@@ -1648,8 +1648,8 @@ https://www.transifex.com/projects/p/yerbas/</translation>
         <translation>Cantidad y Rondas:</translation>
     </message>
     <message>
-        <source>0 YERB / 0 Rounds</source>
-        <translation>0 YERB / 0 Rondas</translation>
+        <source>0 JGC / 0 Rounds</source>
+        <translation>0 JGC / 0 Rondas</translation>
     </message>
     <message>
         <source>Submitted Denom:</source>
@@ -1801,8 +1801,8 @@ https://www.transifex.com/projects/p/yerbas/</translation>
         <translation>Error en solicitud de pago</translation>
     </message>
     <message>
-        <source>Cannot start yerbas: click-to-pay handler</source>
-        <translation>No se pudo iniciar yerbas: manejador de pago-por-clic</translation>
+        <source>Cannot start jagoancoin: click-to-pay handler</source>
+        <translation>No se pudo iniciar jagoancoin: manejador de pago-por-clic</translation>
     </message>
     <message>
         <source>URI handling</source>
@@ -1817,8 +1817,8 @@ https://www.transifex.com/projects/p/yerbas/</translation>
         <translation>Dirección de pago no válida %1</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid Yerbas address or malformed URI parameters.</source>
-        <translation>¡No se puede interpretar la URI! Esto puede deberse a una dirección Yerbas inválida o a parámetros de URI mal formados.</translation>
+        <source>URI cannot be parsed! This can be caused by an invalid Jagoancoin address or malformed URI parameters.</source>
+        <translation>¡No se puede interpretar la URI! Esto puede deberse a una dirección Jagoancoin inválida o a parámetros de URI mal formados.</translation>
     </message>
     <message>
         <source>Payment request file handling</source>
@@ -1915,8 +1915,8 @@ https://www.transifex.com/projects/p/yerbas/</translation>
         <translation>Cantidad</translation>
     </message>
     <message>
-        <source>Enter a Yerbas address (e.g. %1)</source>
-        <translation>Introduzca una dirección Yerbas (ej. %1)</translation>
+        <source>Enter a Jagoancoin address (e.g. %1)</source>
+        <translation>Introduzca una dirección Jagoancoin (ej. %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -2441,8 +2441,8 @@ https://www.transifex.com/projects/p/yerbas/</translation>
         <translation>R&amp;eutilizar una dirección receptora existente (no recomendado)</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Yerbas network.</source>
-        <translation>Un mensaje opcional para adjuntar a la solicitud de pago, el cual se muestra cuando se abre la solicitud. Nota: El mensaje no se enviará con el pago por la red Yerbas.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Jagoancoin network.</source>
+        <translation>Un mensaje opcional para adjuntar a la solicitud de pago, el cual se muestra cuando se abre la solicitud. Nota: El mensaje no se enviará con el pago por la red Jagoancoin.</translation>
     </message>
     <message>
         <source>&amp;Message:</source>
@@ -2453,8 +2453,8 @@ https://www.transifex.com/projects/p/yerbas/</translation>
         <translation>Etiqueta opcional para asociar con la nueva dirección de recepción.</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the Yerbas network.</source>
-        <translation>Un mensaje opcional para adjuntar con la solicitud de pago, el cual aparecerá cuando ésta sea abierta.&lt;br&gt;Nota: El mensaje no se enviará con el pago a la red Yerbas.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the Jagoancoin network.</source>
+        <translation>Un mensaje opcional para adjuntar con la solicitud de pago, el cual aparecerá cuando ésta sea abierta.&lt;br&gt;Nota: El mensaje no se enviará con el pago a la red Jagoancoin.</translation>
     </message>
     <message>
         <source>Use this form to request payments. All fields are &lt;b&gt;optional&lt;/b&gt;.</source>
@@ -2611,7 +2611,7 @@ https://www.transifex.com/projects/p/yerbas/</translation>
     <name>SendCoinsDialog</name>
     <message>
         <source>Send Coins</source>
-        <translation>Enviar Yerbas</translation>
+        <translation>Enviar Jagoancoin</translation>
     </message>
     <message>
         <source>Coin Control Features</source>
@@ -2690,8 +2690,8 @@ https://www.transifex.com/projects/p/yerbas/</translation>
         <translation>Si la comisión personalizada se establece en 1000 duffs y la transacción sólo ocupa 250 bytes, entonces "por kilobyte" sólo se pagan 250 duffs de comisión,&lt;br /&gt;mientras que "como mínimo" paga 1000 duffs. Para transacciones mayores de un kilobyte ambas pagan por kilobyte.</translation>
     </message>
     <message>
-        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for yerbas transactions than the network can process.</source>
-        <translation>Pagar sólo la comisión mínima está bien mientras el volumen de transacciones sea menor al espacio en los bloques.&lt;br /&gt;No obstante, tenga en cuenta que esto puede acabar en una transacción que nunca se confirme una vez haya más demanda de transacciones Yerbas que lo que la red puede procesar.</translation>
+        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for jagoancoin transactions than the network can process.</source>
+        <translation>Pagar sólo la comisión mínima está bien mientras el volumen de transacciones sea menor al espacio en los bloques.&lt;br /&gt;No obstante, tenga en cuenta que esto puede acabar en una transacción que nunca se confirme una vez haya más demanda de transacciones Jagoancoin que lo que la red puede procesar.</translation>
     </message>
     <message>
         <source>per kilobyte</source>
@@ -2886,8 +2886,8 @@ https://www.transifex.com/projects/p/yerbas/</translation>
         <translation><numerusform>Está previsto que comience la confirmación en %n bloque.</numerusform><numerusform>Está previsto que comience la confirmación en %n bloques.</numerusform></translation>
     </message>
     <message>
-        <source>Warning: Invalid Yerbas address</source>
-        <translation>Advertencia: Dirección de Yerbas inválida</translation>
+        <source>Warning: Invalid Jagoancoin address</source>
+        <translation>Advertencia: Dirección de Jagoancoin inválida</translation>
     </message>
     <message>
         <source>Warning: Unknown change address</source>
@@ -2917,8 +2917,8 @@ https://www.transifex.com/projects/p/yerbas/</translation>
         <translation>Pagar &amp;a:</translation>
     </message>
     <message>
-        <source>The Yerbas address to send the payment to</source>
-        <translation>La dirección Yerbas a la cual enviar el pago</translation>
+        <source>The Jagoancoin address to send the payment to</source>
+        <translation>La dirección Jagoancoin a la cual enviar el pago</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2953,8 +2953,8 @@ https://www.transifex.com/projects/p/yerbas/</translation>
         <translation>C&amp;antidad:</translation>
     </message>
     <message>
-        <source>The fee will be deducted from the amount being sent. The recipient will receive a lower amount of Yerbas than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
-        <translation>La comisión se descontará de la cantidad que se envía. El destinatario recibirá una cantidad menor de Yerbas de la que ingrese en el campo de cantidad. Si se seleccionan múltiples destinatarios, la comisión se divide por igual.</translation>
+        <source>The fee will be deducted from the amount being sent. The recipient will receive a lower amount of Jagoancoin than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
+        <translation>La comisión se descontará de la cantidad que se envía. El destinatario recibirá una cantidad menor de Jagoancoin de la que ingrese en el campo de cantidad. Si se seleccionan múltiples destinatarios, la comisión se divide por igual.</translation>
     </message>
     <message>
         <source>S&amp;ubtract fee from amount</source>
@@ -2969,8 +2969,8 @@ https://www.transifex.com/projects/p/yerbas/</translation>
         <translation>Mensaje:</translation>
     </message>
     <message>
-        <source>A message that was attached to the yerbas: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Yerbas network.</source>
-        <translation>Un mensaje que se adjuntó al Yerbas: URI que será almacenada con la transacción para su referencia. Nota: Este mensaje no se enviará a través de la red Yerbas.</translation>
+        <source>A message that was attached to the jagoancoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Jagoancoin network.</source>
+        <translation>Un mensaje que se adjuntó al Jagoancoin: URI que será almacenada con la transacción para su referencia. Nota: Este mensaje no se enviará a través de la red Jagoancoin.</translation>
     </message>
     <message>
         <source>This is an unauthenticated payment request.</source>
@@ -3022,12 +3022,12 @@ https://www.transifex.com/projects/p/yerbas/</translation>
         <translation>&amp;Firmar Mensaje</translation>
     </message>
     <message>
-        <source>You can sign messages/agreements with your addresses to prove you can receive Yerbas sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
-        <translation>Puede firmar mensajes/acuerdos con sus direcciones para probar que puede recibir Yerbas enviados a ellos. Tenga cuidado de no firmar nada vago o al azar, como ataques de phising que pueden intentar engañarle para que firme su identidad sobre ellos. Solo firma declaraciones totalmente detallas con las que este de acuerdo.</translation>
+        <source>You can sign messages/agreements with your addresses to prove you can receive Jagoancoin sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
+        <translation>Puede firmar mensajes/acuerdos con sus direcciones para probar que puede recibir Jagoancoin enviados a ellos. Tenga cuidado de no firmar nada vago o al azar, como ataques de phising que pueden intentar engañarle para que firme su identidad sobre ellos. Solo firma declaraciones totalmente detallas con las que este de acuerdo.</translation>
     </message>
     <message>
-        <source>The Yerbas address to sign the message with</source>
-        <translation>La dirección Yerbas con la cual se firma el mensaje</translation>
+        <source>The Jagoancoin address to sign the message with</source>
+        <translation>La dirección Jagoancoin con la cual se firma el mensaje</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -3058,8 +3058,8 @@ https://www.transifex.com/projects/p/yerbas/</translation>
         <translation>Copiar la firma actual al portapapeles del sistema</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Yerbas address</source>
-        <translation>Firmar el mensaje para demostrar que posee esta dirección Yerbas</translation>
+        <source>Sign the message to prove you own this Jagoancoin address</source>
+        <translation>Firmar el mensaje para demostrar que posee esta dirección Jagoancoin</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -3082,12 +3082,12 @@ https://www.transifex.com/projects/p/yerbas/</translation>
         <translation>Introduzca la dirección del receptor, el mensaje (asegurese de copiar tal cual los saltos de línea, espacios, tabulaciones, etc.) y la firma a continuación para verificar el mensaje. Tenga cuidado de no asumir más información de lo que dice el propio mensaje firmado para evitar fraudes basados en ataques de tipo man-in-the-middle. </translation>
     </message>
     <message>
-        <source>The Yerbas address the message was signed with</source>
-        <translation>La dirección Yerbas con la cual se firmó el mensaje</translation>
+        <source>The Jagoancoin address the message was signed with</source>
+        <translation>La dirección Jagoancoin con la cual se firmó el mensaje</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Yerbas address</source>
-        <translation>Verificar el mensaje para garantizar que fue firmado con la dirección Yerbas indicada</translation>
+        <source>Verify the message to ensure it was signed with the specified Jagoancoin address</source>
+        <translation>Verificar el mensaje para garantizar que fue firmado con la dirección Jagoancoin indicada</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
@@ -3718,7 +3718,7 @@ https://www.transifex.com/projects/p/yerbas/</translation>
     <name>WalletModel</name>
     <message>
         <source>Send Coins</source>
-        <translation>Enviar Yerbas</translation>
+        <translation>Enviar Jagoancoin</translation>
     </message>
 </context>
 <context>
@@ -3761,7 +3761,7 @@ https://www.transifex.com/projects/p/yerbas/</translation>
     </message>
 </context>
 <context>
-    <name>yerbas-core</name>
+    <name>jagoancoin-core</name>
     <message>
         <source>Bind to given address and always listen on it. Use [host]:port notation for IPv6</source>
         <translation>Vincular a la dirección dada y escuchar siempre en ella. Utilice la notación [host]:port para IPv6</translation>
@@ -4099,8 +4099,8 @@ https://www.transifex.com/projects/p/yerbas/</translation>
         <translation>Número mínimo inválido de firmantes de spork especificados con -minsporkkeys</translation>
     </message>
     <message>
-        <source>Keep N YERB mixed (%u-%u, default: %u)</source>
-        <translation>Mantener N YERB mezclado (%u-%u, default: %u)</translation>
+        <source>Keep N JGC mixed (%u-%u, default: %u)</source>
+        <translation>Mantener N JGC mezclado (%u-%u, default: %u)</translation>
     </message>
     <message>
         <source>Keep at most &lt;n&gt; unconnectable transactions in memory (default: %u)</source>
@@ -4319,8 +4319,8 @@ https://www.transifex.com/projects/p/yerbas/</translation>
         <translation>Llave KeePassHttp para la comunicación cifrada AES con KeePass</translation>
     </message>
     <message>
-        <source>Disable all Yerbas specific functionality (Smartnodes, PrivateSend, InstantSend, Governance) (0-1, default: %u)</source>
-        <translation>Deshabilitar todas las funcionalidades especificas de Yerbas (Smartnodes, PrivateSend, InstantSend, Governanza) (0-1, predeterminado: %u)</translation>
+        <source>Disable all Jagoancoin specific functionality (Smartnodes, PrivateSend, InstantSend, Governance) (0-1, default: %u)</source>
+        <translation>Deshabilitar todas las funcionalidades especificas de Jagoancoin (Smartnodes, PrivateSend, InstantSend, Governanza) (0-1, predeterminado: %u)</translation>
     </message>
     <message>
         <source>%s file contains all private keys from this wallet. Do not share it with anyone!</source>
@@ -4827,8 +4827,8 @@ https://www.transifex.com/projects/p/yerbas/</translation>
         <translation>Opciones de servidor RPC:</translation>
     </message>
     <message>
-        <source>Yerbas Core</source>
-        <translation>Yerbas Core</translation>
+        <source>Jagoancoin Core</source>
+        <translation>Jagoancoin Core</translation>
     </message>
     <message>
         <source>The %s developers</source>
@@ -4955,8 +4955,8 @@ https://www.transifex.com/projects/p/yerbas/</translation>
         <translation>Los pares de listas blancas que se conectan desde la dirección IP dada (por ejemplo, 1.2.3.4) o la red marcada CIDR (por ejemplo, 1.2.3.0/24). Se puede especificar varias veces.</translation>
     </message>
     <message>
-        <source>You are starting in lite mode, most Yerbas-specific functionality is disabled.</source>
-        <translation>Estás comenzando en modo lite, la mayoría de las funciones específicas de Yerbas están deshabilitadas.</translation>
+        <source>You are starting in lite mode, most Jagoancoin-specific functionality is disabled.</source>
+        <translation>Estás comenzando en modo lite, la mayoría de las funciones específicas de Jagoancoin están deshabilitadas.</translation>
     </message>
     <message>
         <source>%d of last 100 blocks have unexpected version</source>

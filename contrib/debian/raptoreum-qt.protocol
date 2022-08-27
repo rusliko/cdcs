@@ -1,6 +1,6 @@
 [Protocol]
-exec=yerbas-qt '%u'
-protocol=yerbas
+exec=jagoancoin-qt '%u'
+protocol=jagoancoin
 input=none
 output=none
 helper=true

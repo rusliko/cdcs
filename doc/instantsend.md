@@ -11,9 +11,9 @@ When a "Transaction Lock" occurs the hash of the related transaction is broadcas
 * `zmqpubrawtxlock`: publishes the raw transaction when locked via InstantSend
 * `zmqpubhashtxlock`: publishes the transaction hash when locked via InstantSend
 
-This mechanism has been integrated into Bitcore-Node-Yerbas which allows for notification to be broadcast through Insight API in one of two ways:
-* WebSocket: [https://github.com/The-Yerbas-Endeavor/insight-api-yerbas#web-socket-api](https://github.com/The-Yerbas-Endeavor/insight-api-yerbas#web-socket-api)
-* API: [https://github.com/The-Yerbas-Endeavor/insight-api-yerbas#instantsend-transactions](https://github.com/The-Yerbas-Endeavor/insight-api-yerbas#instantsend-transactions)
+This mechanism has been integrated into Bitcore-Node-Jagoancoin which allows for notification to be broadcast through Insight API in one of two ways:
+* WebSocket: [https://github.com/jagoanpilot/insight-api-jagoancoin#web-socket-api](https://github.com/jagoanpilot/insight-api-jagoancoin#web-socket-api)
+* API: [https://github.com/jagoanpilot/insight-api-jagoancoin#instantsend-transactions](https://github.com/jagoanpilot/insight-api-jagoancoin#instantsend-transactions)
 
 #### Command line option
 

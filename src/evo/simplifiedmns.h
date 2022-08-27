@@ -1,10 +1,10 @@
 // Copyright (c) 2017-2020 The Dash Core developers
-// Copyright (c) 2020 The Yerbas developers
+// Copyright (c) 2020 The Jagoancoin developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef YERBAS_SIMPLIFIEDMNS_H
-#define YERBAS_SIMPLIFIEDMNS_H
+#ifndef JAGOANCOIN_SIMPLIFIEDMNS_H
+#define JAGOANCOIN_SIMPLIFIEDMNS_H
 
 #include "bls/bls.h"
 #include "merkleblock.h"
@@ -148,4 +148,4 @@ public:
 
 bool BuildSimplifiedMNListDiff(const uint256& baseBlockHash, const uint256& blockHash, CSimplifiedMNListDiff& mnListDiffRet, std::string& errorRet);
 
-#endif //YERBAS_SIMPLIFIEDMNS_H
+#endif //JAGOANCOIN_SIMPLIFIEDMNS_H

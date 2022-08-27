@@ -1,6 +1,6 @@
 // Copyright (c) 2011-2015 The Bitcoin Core developers
 // Copyright (c) 2014-2019 The Dash Core developers
-// Copyright (c) 2020 The Yerbas developers
+// Copyright (c) 2020 The Jagoancoin developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -20,9 +20,9 @@ BitcoinUnits::BitcoinUnits(QObject *parent):
 QList<BitcoinUnits::Unit> BitcoinUnits::availableUnits()
 {
     QList<BitcoinUnits::Unit> unitlist;
-    unitlist.append(YERB);
-    unitlist.append(mYERB);
-    unitlist.append(uYERB);
+    unitlist.append(JGC);
+    unitlist.append(mJGC);
+    unitlist.append(uJGC);
     unitlist.append(weeds);
     return unitlist;
 }
@@ -31,9 +31,9 @@ bool BitcoinUnits::valid(int unit)
 {
     switch(unit)
     {
-    case YERB:
-    case mYERB:
-    case uYERB:
+    case JGC:
+    case mJGC:
+    case uJGC:
     case weeds:
         return true;
     default:
@@ -47,9 +47,9 @@ QString BitcoinUnits::name(int unit)
     {
         switch(unit)
         {
-            case YERB: return QString("YERB");
-            case mYERB: return QString("mYERB");
-            case uYERB: return QString::fromUtf8("μYERB");
+            case JGC: return QString("JGC");
+            case mJGC: return QString("mJGC");
+            case uJGC: return QString::fromUtf8("μJGC");
             case weeds: return QString("weeds");
             default: return QString("???");
         }
@@ -58,9 +58,9 @@ QString BitcoinUnits::name(int unit)
     {
         switch(unit)
         {
-            case YERB: return QString("tYERB");
-            case mYERB: return QString("mtYERB");
-            case uYERB: return QString::fromUtf8("μtYERB");
+            case JGC: return QString("tJGC");
+            case mJGC: return QString("mtJGC");
+            case uJGC: return QString::fromUtf8("μtJGC");
             case weeds: return QString("tduffs");
             default: return QString("???");
         }
@@ -73,10 +73,10 @@ QString BitcoinUnits::description(int unit)
     {
         switch(unit)
         {
-            case YERB: return QString("Yerbas");
-            case mYERB: return QString("Milli-Yerbas (1 / 1" THIN_SP_UTF8 "000)");
-            case uYERB: return QString("Micro-Yerbas (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
-            case weeds: return QString("Ten Nano-Yerbas (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case JGC: return QString("Jagoancoin");
+            case mJGC: return QString("Milli-Jagoancoin (1 / 1" THIN_SP_UTF8 "000)");
+            case uJGC: return QString("Micro-Jagoancoin (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case weeds: return QString("Ten Nano-Jagoancoin (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
             default: return QString("???");
         }
     }
@@ -84,10 +84,10 @@ QString BitcoinUnits::description(int unit)
     {
         switch(unit)
         {
-            case YERB: return QString("TestYerbass");
-            case mYERB: return QString("Milli-TestYerbas (1 / 1" THIN_SP_UTF8 "000)");
-            case uYERB: return QString("Micro-TestYerbas (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
-            case weeds: return QString("Ten Nano-TestYerbas (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case JGC: return QString("TestJagoancoins");
+            case mJGC: return QString("Milli-TestJagoancoin (1 / 1" THIN_SP_UTF8 "000)");
+            case uJGC: return QString("Micro-TestJagoancoin (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case weeds: return QString("Ten Nano-TestJagoancoin (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
             default: return QString("???");
         }
     }
@@ -97,9 +97,9 @@ qint64 BitcoinUnits::factor(int unit)
 {
     switch(unit)
     {
-    case YERB:  return 100000000;
-    case mYERB: return 100000;
-    case uYERB: return 100;
+    case JGC:  return 100000000;
+    case mJGC: return 100000;
+    case uJGC: return 100;
     case weeds: return 1;
     default:   return 100000000;
     }
@@ -109,9 +109,9 @@ int BitcoinUnits::decimals(int unit)
 {
     switch(unit)
     {
-    case YERB: return 8;
-    case mYERB: return 5;
-    case uYERB: return 2;
+    case JGC: return 8;
+    case mJGC: return 5;
+    case uJGC: return 2;
     case weeds: return 0;
     default: return 0;
     }

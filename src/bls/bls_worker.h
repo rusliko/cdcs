@@ -1,10 +1,10 @@
 // Copyright (c) 2018-2020 The Dash Core developers
-// Copyright (c) 2020 The Yerbas developers
+// Copyright (c) 2020 The Jagoancoin developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef YERBAS_CRYPTO_BLS_WORKER_H
-#define YERBAS_CRYPTO_BLS_WORKER_H
+#ifndef JAGOANCOIN_CRYPTO_BLS_WORKER_H
+#define JAGOANCOIN_CRYPTO_BLS_WORKER_H
 
 #include "bls.h"
 
@@ -203,4 +203,4 @@ private:
     }
 };
 
-#endif //YERBAS_CRYPTO_BLS_WORKER_H
+#endif //JAGOANCOIN_CRYPTO_BLS_WORKER_H

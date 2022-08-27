@@ -15,7 +15,7 @@ fi
 
 export LD_LIBRARY_PATH=$BUILD_DIR/depends/$HOST/lib
 
-cd build-ci/yerbascore-$BUILD_TARGET
+cd build-ci/jagoancoin-$BUILD_TARGET
 
 set +e
 ./test/functional/test_runner.py --coverage --quiet --nocleanup --tmpdir=$(pwd)/testdatadirs $PASS_ARGS
