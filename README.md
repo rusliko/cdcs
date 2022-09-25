@@ -1,19 +1,19 @@
-Welcome to Jagoancoin 
+Welcome to cdcs 
 ===========================
 
  
-# About Jagoancoin
-Jagoancoin is a CPU mineable cryptocurrency and open source software developed under MIT license. It can be mined on GPU too, but CPU mining is more efficient.
+# About cdcs
+cdcs is a CPU mineable cryptocurrency and open source software developed under MIT license. It can be mined on GPU too, but CPU mining is more efficient.
 
 # Wallets
-- [Download Jagoancoin Core wallet for Windows](https://github.com/Jagoanpilot/jagoancoin/releases/)
-- [Download Jagoancoin Core wallet for Macos](https://github.com/Jagoanpilot/jagoancoin/releases/)
-- [Download Jagoancoin Core wallet for Ubuntu](https://github.com/Jagoanpilot/jagoancoin/releases/)
+- [Download cdcs Core wallet for Windows](https://github.com/Jagoanpilot/cdcs/releases/)
+- [Download cdcs Core wallet for Macos](https://github.com/Jagoanpilot/cdcs/releases/)
+- [Download cdcs Core wallet for Ubuntu](https://github.com/Jagoanpilot/cdcs/releases/)
 
 # Coin specifications:
 &nbsp; | &nbsp;
 ------ | ------
-**Coin name:** | Jagoancoin (JGC)
+**Coin name:** | cdcs (JGC)
 **Initial block reward:** | 2000 JGC
 **Average block time:** | 120 Second
 **Smartnode Payments Start Block**: | 8400
@@ -25,15 +25,15 @@ Jagoancoin is a CPU mineable cryptocurrency and open source software developed u
 License
 -------
 
-Jagoancoin Core is released under the terms of the MIT license. See [COPYING](COPYING) for more
+cdcs Core is released under the terms of the MIT license. See [COPYING](COPYING) for more
 information or see https://opensource.org/licenses/MIT.
 
 Development Process
 -------------------
 
 The `master` branch is meant to be stable. Development is done in separate branches.
-[Tags](https://github.com/JagoanCoin/jagoancoin/tags) are created to indicate new official,
-stable release versions of Jagoancoin Core.
+[Tags](https://github.com/cdcs/cdcs/tags) are created to indicate new official,
+stable release versions of cdcs Core.
 
 The contribution workflow is described in [CONTRIBUTING.md](CONTRIBUTING.md).
 
