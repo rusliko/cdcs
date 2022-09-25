@@ -1,5 +1,5 @@
 ---
-name: Jagoancoin Build
+name: CDCS Build
 on:
   push:
     branches:
@@ -9,9 +9,9 @@ on:
     branches:
       - develop
 env:
-  COIN_NAME: jagoancoin
-  BUILD_DIR: jagoancoin-build
-  COMPRESS_DIR: jagoancoin-compress
+  COIN_NAME: CDCS
+  BUILD_DIR: CDCS-build
+  COMPRESS_DIR: CDCS-compress
   TEST_LOG_ARTIFACT_DIR: test-logs
 jobs:
   checking-build-version:
@@ -83,20 +83,20 @@ jobs:
         run: |
           make -j$(nproc)
           mkdir -p $BUILD_DIR
-          mv src/{jagoancoin-cli,jagoancoin-tx,jagoancoind,qt/jagoancoin-qt} $BUILD_DIR/
+          mv src/{CDCS-cli,CDCS-tx,CDCSd,qt/CDCS-qt} $BUILD_DIR/
           strip $BUILD_DIR/*
       - name: generate checksum and compress
         run: |
           echo "buildng $BUILD_VERSION version"
           cd $BUILD_DIR
-          shasum jagoancoin-cli >> checksums.txt
-          sha256sum jagoancoin-cli >> checksums.txt
-          shasum jagoancoind >> checksums.txt
-          sha256sum jagoancoind >> checksums.txt
-          shasum jagoancoin-tx >> checksums.txt
-          sha256sum jagoancoin-tx >> checksums.txt
-          shasum jagoancoin-qt >> checksums.txt
-          sha256sum jagoancoin-qt >> checksums.txt
+          shasum CDCS-cli >> checksums.txt
+          sha256sum CDCS-cli >> checksums.txt
+          shasum CDCSd >> checksums.txt
+          sha256sum CDCSd >> checksums.txt
+          shasum CDCS-tx >> checksums.txt
+          sha256sum CDCS-tx >> checksums.txt
+          shasum CDCS-qt >> checksums.txt
+          sha256sum CDCS-qt >> checksums.txt
           cat checksums.txt
           cd ..
           tar -cvzf ${COIN_NAME}-ubuntu18-${BUILD_VERSION}.tar.gz $BUILD_DIR/*
@@ -141,20 +141,20 @@ jobs:
         run: |
           make -j$(nproc)
           mkdir -p $BUILD_DIR
-          mv src/{jagoancoin-cli,jagoancoin-tx,jagoancoind,qt/jagoancoin-qt} $BUILD_DIR/
+          mv src/{CDCS-cli,CDCS-tx,CDCSd,qt/CDCS-qt} $BUILD_DIR/
           strip $BUILD_DIR/*
       - name: generate checksum and compress
         run: |
           echo "buildng $BUILD_VERSION version"
           cd $BUILD_DIR
-          shasum jagoancoin-cli >> checksums.txt
-          sha256sum jagoancoin-cli >> checksums.txt
-          shasum jagoancoind >> checksums.txt
-          sha256sum jagoancoind >> checksums.txt
-          shasum jagoancoin-tx >> checksums.txt
-          sha256sum jagoancoin-tx >> checksums.txt
-          shasum jagoancoin-qt >> checksums.txt
-          sha256sum jagoancoin-qt >> checksums.txt
+          shasum CDCS-cli >> checksums.txt
+          sha256sum CDCS-cli >> checksums.txt
+          shasum CDCSd >> checksums.txt
+          sha256sum CDCSd >> checksums.txt
+          shasum CDCS-tx >> checksums.txt
+          sha256sum CDCS-tx >> checksums.txt
+          shasum CDCS-qt >> checksums.txt
+          sha256sum CDCS-qt >> checksums.txt
           cat checksums.txt
           cd ..
           tar -cvzf ${COIN_NAME}-ubuntu20-${BUILD_VERSION}.tar.gz $BUILD_DIR/*
@@ -198,20 +198,20 @@ jobs:
         run: |
           make -j8
           mkdir -p $BUILD_DIR
-          mv src/{jagoancoin-cli,jagoancoin-tx,jagoancoind,qt/jagoancoin-qt} $BUILD_DIR/
+          mv src/{CDCS-cli,CDCS-tx,CDCSd,qt/CDCS-qt} $BUILD_DIR/
           strip $BUILD_DIR/*
       - name: generate checksum and compress
         run: |
           echo "buildng $BUILD_VERSION version"
           cd $BUILD_DIR
-          shasum jagoancoin-cli >> checksums.txt
-          openssl sha256 jagoancoin-cli >> checksums.txt
-          shasum jagoancoind >> checksums.txt
-          openssl sha256 jagoancoind >> checksums.txt
-          shasum jagoancoin-tx >> checksums.txt
-          openssl sha256 jagoancoin-tx >> checksums.txt
-          openssl sha256 jagoancoin-qt >> checksums.txt
-          openssl sha256 jagoancoin-qt >> checksums.txt
+          shasum CDCS-cli >> checksums.txt
+          openssl sha256 CDCS-cli >> checksums.txt
+          shasum CDCSd >> checksums.txt
+          openssl sha256 CDCSd >> checksums.txt
+          shasum CDCS-tx >> checksums.txt
+          openssl sha256 CDCS-tx >> checksums.txt
+          openssl sha256 CDCS-qt >> checksums.txt
+          openssl sha256 CDCS-qt >> checksums.txt
           cat checksums.txt
           cd ..
           tar -cvzf ${COIN_NAME}-macos-${BUILD_VERSION}.tar.gz $BUILD_DIR/*
@@ -232,7 +232,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: ${{ env.COIN_NAME }}-dmg-${{ env.BUILD_VERSION }}
-          path: Jagoancoin-Qt.dmg
+          path: CDCS-Qt.dmg
   build-win:
     name: window build
     needs: checking-build-version
@@ -267,20 +267,20 @@ jobs:
         run: |
           make -j$(nproc)
           mkdir -p $BUILD_DIR
-          mv src/{jagoancoin-cli.exe,jagoancoin-tx.exe,jagoancoind.exe,qt/jagoancoin-qt.exe} $BUILD_DIR/
+          mv src/{CDCS-cli.exe,CDCS-tx.exe,CDCSd.exe,qt/CDCS-qt.exe} $BUILD_DIR/
           strip $BUILD_DIR/*
       - name: generate checksum and compress
         run: |
           echo "buildng $BUILD_VERSION version"
           cd $BUILD_DIR
-          shasum jagoancoin-cli.exe >> checksums.txt
-          sha256sum jagoancoin-cli.exe >> checksums.txt
-          shasum jagoancoind.exe >> checksums.txt
-          sha256sum jagoancoind.exe >> checksums.txt
-          shasum jagoancoin-tx.exe >> checksums.txt
-          sha256sum jagoancoin-tx.exe >> checksums.txt
-          shasum jagoancoin-qt.exe >> checksums.txt
-          sha256sum jagoancoin-qt.exe >> checksums.txt
+          shasum CDCS-cli.exe >> checksums.txt
+          sha256sum CDCS-cli.exe >> checksums.txt
+          shasum CDCSd.exe >> checksums.txt
+          sha256sum CDCSd.exe >> checksums.txt
+          shasum CDCS-tx.exe >> checksums.txt
+          sha256sum CDCS-tx.exe >> checksums.txt
+          shasum CDCS-qt.exe >> checksums.txt
+          sha256sum CDCS-qt.exe >> checksums.txt
           cd ..
           zip -r ${COIN_NAME}-win-${BUILD_VERSION}.zip $BUILD_DIR/
           mkdir -p ${COMPRESS_DIR}
@@ -293,4 +293,3 @@ jobs:
         with:
           name: ${{ env.COIN_NAME }}-win-${{ env.BUILD_VERSION }}
           path: ${{ env.COMPRESS_DIR }}
-
