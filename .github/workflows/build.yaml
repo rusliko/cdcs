@@ -1,5 +1,5 @@
 ---
-name: CDCS Build
+name: cdcs Build
 on:
   push:
     branches:
@@ -9,9 +9,9 @@ on:
     branches:
       - develop
 env:
-  COIN_NAME: CDCS
-  BUILD_DIR: CDCS-build
-  COMPRESS_DIR: CDCS-compress
+  COIN_NAME: cdcs
+  BUILD_DIR: cdcs-build
+  COMPRESS_DIR: cdcs-compress
   TEST_LOG_ARTIFACT_DIR: test-logs
 jobs:
   checking-build-version:
@@ -83,20 +83,20 @@ jobs:
         run: |
           make -j$(nproc)
           mkdir -p $BUILD_DIR
-          mv src/{CDCS-cli,CDCS-tx,CDCSd,qt/CDCS-qt} $BUILD_DIR/
+          mv src/{cdcs-cli,cdcs-tx,cdcsd,qt/cdcs-qt} $BUILD_DIR/
           strip $BUILD_DIR/*
       - name: generate checksum and compress
         run: |
           echo "buildng $BUILD_VERSION version"
           cd $BUILD_DIR
-          shasum CDCS-cli >> checksums.txt
-          sha256sum CDCS-cli >> checksums.txt
-          shasum CDCSd >> checksums.txt
-          sha256sum CDCSd >> checksums.txt
-          shasum CDCS-tx >> checksums.txt
-          sha256sum CDCS-tx >> checksums.txt
-          shasum CDCS-qt >> checksums.txt
-          sha256sum CDCS-qt >> checksums.txt
+          shasum cdcs-cli >> checksums.txt
+          sha256sum cdcs-cli >> checksums.txt
+          shasum cdcsd >> checksums.txt
+          sha256sum cdcsd >> checksums.txt
+          shasum cdcs-tx >> checksums.txt
+          sha256sum cdcs-tx >> checksums.txt
+          shasum cdcs-qt >> checksums.txt
+          sha256sum cdcs-qt >> checksums.txt
           cat checksums.txt
           cd ..
           tar -cvzf ${COIN_NAME}-ubuntu18-${BUILD_VERSION}.tar.gz $BUILD_DIR/*
@@ -141,20 +141,20 @@ jobs:
         run: |
           make -j$(nproc)
           mkdir -p $BUILD_DIR
-          mv src/{CDCS-cli,CDCS-tx,CDCSd,qt/CDCS-qt} $BUILD_DIR/
+          mv src/{cdcs-cli,cdcs-tx,cdcsd,qt/cdcs-qt} $BUILD_DIR/
           strip $BUILD_DIR/*
       - name: generate checksum and compress
         run: |
           echo "buildng $BUILD_VERSION version"
           cd $BUILD_DIR
-          shasum CDCS-cli >> checksums.txt
-          sha256sum CDCS-cli >> checksums.txt
-          shasum CDCSd >> checksums.txt
-          sha256sum CDCSd >> checksums.txt
-          shasum CDCS-tx >> checksums.txt
-          sha256sum CDCS-tx >> checksums.txt
-          shasum CDCS-qt >> checksums.txt
-          sha256sum CDCS-qt >> checksums.txt
+          shasum cdcs-cli >> checksums.txt
+          sha256sum cdcs-cli >> checksums.txt
+          shasum cdcsd >> checksums.txt
+          sha256sum cdcsd >> checksums.txt
+          shasum cdcs-tx >> checksums.txt
+          sha256sum cdcs-tx >> checksums.txt
+          shasum cdcs-qt >> checksums.txt
+          sha256sum cdcs-qt >> checksums.txt
           cat checksums.txt
           cd ..
           tar -cvzf ${COIN_NAME}-ubuntu20-${BUILD_VERSION}.tar.gz $BUILD_DIR/*
@@ -198,20 +198,20 @@ jobs:
         run: |
           make -j8
           mkdir -p $BUILD_DIR
-          mv src/{CDCS-cli,CDCS-tx,CDCSd,qt/CDCS-qt} $BUILD_DIR/
+          mv src/{cdcs-cli,cdcs-tx,cdcsd,qt/cdcs-qt} $BUILD_DIR/
           strip $BUILD_DIR/*
       - name: generate checksum and compress
         run: |
           echo "buildng $BUILD_VERSION version"
           cd $BUILD_DIR
-          shasum CDCS-cli >> checksums.txt
-          openssl sha256 CDCS-cli >> checksums.txt
-          shasum CDCSd >> checksums.txt
-          openssl sha256 CDCSd >> checksums.txt
-          shasum CDCS-tx >> checksums.txt
-          openssl sha256 CDCS-tx >> checksums.txt
-          openssl sha256 CDCS-qt >> checksums.txt
-          openssl sha256 CDCS-qt >> checksums.txt
+          shasum cdcs-cli >> checksums.txt
+          openssl sha256 cdcs-cli >> checksums.txt
+          shasum cdcsd >> checksums.txt
+          openssl sha256 cdcsd >> checksums.txt
+          shasum cdcs-tx >> checksums.txt
+          openssl sha256 cdcs-tx >> checksums.txt
+          openssl sha256 cdcs-qt >> checksums.txt
+          openssl sha256 cdcs-qt >> checksums.txt
           cat checksums.txt
           cd ..
           tar -cvzf ${COIN_NAME}-macos-${BUILD_VERSION}.tar.gz $BUILD_DIR/*
@@ -232,7 +232,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: ${{ env.COIN_NAME }}-dmg-${{ env.BUILD_VERSION }}
-          path: CDCS-Qt.dmg
+          path: cdcs-Qt.dmg
   build-win:
     name: window build
     needs: checking-build-version
@@ -267,20 +267,20 @@ jobs:
         run: |
           make -j$(nproc)
           mkdir -p $BUILD_DIR
-          mv src/{CDCS-cli.exe,CDCS-tx.exe,CDCSd.exe,qt/CDCS-qt.exe} $BUILD_DIR/
+          mv src/{cdcs-cli.exe,cdcs-tx.exe,cdcsd.exe,qt/cdcs-qt.exe} $BUILD_DIR/
           strip $BUILD_DIR/*
       - name: generate checksum and compress
         run: |
           echo "buildng $BUILD_VERSION version"
           cd $BUILD_DIR
-          shasum CDCS-cli.exe >> checksums.txt
-          sha256sum CDCS-cli.exe >> checksums.txt
-          shasum CDCSd.exe >> checksums.txt
-          sha256sum CDCSd.exe >> checksums.txt
-          shasum CDCS-tx.exe >> checksums.txt
-          sha256sum CDCS-tx.exe >> checksums.txt
-          shasum CDCS-qt.exe >> checksums.txt
-          sha256sum CDCS-qt.exe >> checksums.txt
+          shasum cdcs-cli.exe >> checksums.txt
+          sha256sum cdcs-cli.exe >> checksums.txt
+          shasum cdcsd.exe >> checksums.txt
+          sha256sum cdcsd.exe >> checksums.txt
+          shasum cdcs-tx.exe >> checksums.txt
+          sha256sum cdcs-tx.exe >> checksums.txt
+          shasum cdcs-qt.exe >> checksums.txt
+          sha256sum cdcs-qt.exe >> checksums.txt
           cd ..
           zip -r ${COIN_NAME}-win-${BUILD_VERSION}.zip $BUILD_DIR/
           mkdir -p ${COMPRESS_DIR}
