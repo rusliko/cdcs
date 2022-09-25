@@ -1,4 +1,4 @@
-Welcome to cdcs 
+Welcome to CDCS 
 ===========================
 
  
@@ -6,9 +6,9 @@ Welcome to cdcs
 cdcs is a CPU mineable cryptocurrency and open source software developed under MIT license. It can be mined on GPU too, but CPU mining is more efficient.
 
 # Wallets
-- [Download cdcs Core wallet for Windows](https://github.com/Jagoanpilot/cdcs/releases/)
-- [Download cdcs Core wallet for Macos](https://github.com/Jagoanpilot/cdcs/releases/)
-- [Download cdcs Core wallet for Ubuntu](https://github.com/Jagoanpilot/cdcs/releases/)
+- [Download cdcs Core wallet for Windows](https://github.com/rusliko/cdcs/releases/)
+- [Download cdcs Core wallet for Macos](https://github.com/rusliko/cdcs/releases/)
+- [Download cdcs Core wallet for Ubuntu](https://github.com/rusliko/cdcs/releases/)
 
 # Coin specifications:
 &nbsp; | &nbsp;
