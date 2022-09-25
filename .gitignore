@@ -6,15 +6,15 @@ reset-files.bash
 *.tar.gz
 
 *.exe
-src/jagoancoin
-src/jagoancoind
-src/jagoancoin-cli
-src/jagoancoin-tx
-src/test/test_jagoancoin
-src/test/test_jagoancoin_fuzzy
-src/qt/test/test_jagoancoin-qt
+src/cdcs
+src/cdcsd
+src/cdcs-cli
+src/cdcs-tx
+src/test/test_cdcs
+src/test/test_cdcs_fuzzy
+src/qt/test/test_cdcs-qt
 src/qt/res/css/colors/*
-src/bench/bench_jagoancoin
+src/bench/bench_cdcs
 
 # autoreconf
 Makefile.in
@@ -37,8 +37,8 @@ config.log
 config.status
 configure
 libtool
-src/config/jagoancoin-config.h
-src/config/jagoancoin-config.h.in
+src/config/cdcs-config.h
+src/config/cdcs-config.h.in
 src/config/stamp-h1
 share/setup.nsi
 share/qt/Info.plist
@@ -85,14 +85,14 @@ libconftest.dylib*
 # Compilation and Qt preprocessor part
 *.qm
 Makefile
-jagoancoin-qt
-Jagoancoin-Qt.app
+cdcs-qt
+cdcs-Qt.app
 background.tiff*
 !/depends/Makefile
 
 # Unit-tests
 Makefile.test
-jagoancoin-qt_test
+cdcs-qt_test
 
 # Resources cpp
 qrc_*.cpp
@@ -106,7 +106,7 @@ build
 *.gcno
 *.gcda
 /*.info
-test_jagoancoin.coverage/
+test_cdcs.coverage/
 total.coverage/
 coverage_percent.txt
 
@@ -124,15 +124,15 @@ test/cache/*
 .autotools
 /doc/doxygen/
 
-libjagoancoinconsensus.pc
+libcdcsconsensus.pc
 contrib/devtools/split-debug.sh
-src/qt/jagoancoin-qt.bash
+src/qt/cdcs-qt.bash
 qa/pull-tester/tests-config.sh
 
 #development symlinks
-jagoancoin-cli
-jagoancoind
-jagoancoin-qt
+cdcs-cli
+cdcsd
+cdcs-qt
 make
 
 /docker/bin
@@ -148,6 +148,6 @@ dist/
 *.conf
 .settings/language.settings.xml
 
-/jagoancoin.iml
+/cdcs.iml
 /testnet3_binary/
 /testnet4/
