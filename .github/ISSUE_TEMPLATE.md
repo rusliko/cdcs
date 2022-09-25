@@ -1,8 +1,6 @@
 <!--- Remove sections that do not apply -->
 
-This issue tracker is only for technical issues related to Jagoancoin Core.
-
-General Jagoancoin questions and/or support requests and are best directed to the [Jagoancoin Discord](https://discord.com/invite/2T8xG7e).
+This issue tracker is only for technical issues related to CDCS Digital Assets Core.
 
 To report critical security issues, DM the Core or Developer Teams instead of creating Github issues.
 
@@ -23,7 +21,7 @@ Tell us what happens instead
 ### Screenshots.
 If the issue is related to the GUI, screenshots can be added to this issue via drag & drop.
 
-### What version of Jagoancoin Core are you using?
+### What version of CDCS Digital Assets Core are you using?
 List the version number/commit ID, and if it is an official binary, self compiled or a distribution package such as PPA.
 
 ### Machine specs:
